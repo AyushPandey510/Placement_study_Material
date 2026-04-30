@@ -2,18 +2,23 @@
   "version": 2,
   "buildCommand": "cd placement_prep/frontend && npm install && npm run build",
   "outputDirectory": "placement_prep/frontend/dist",
-  "rewrites": [
+  "functions": {
+    "api/index.py": {
+      "includeFiles": "courses/**,assets/**,placement_prep/data/**"
+    }
+  },
+  "routes": [
     {
-      "source": "/api/(.*)",
-      "destination": "/api/index.py"
+      "src": "^/api/(.*)",
+      "dest": "/api/index.py"
     },
     {
-      "source": "/assets/images/(.*)",
-      "destination": "/api/index.py"
+      "src": "^/assets/(.*)",
+      "dest": "/api/index.py"
     },
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "src": ".*",
+      "dest": "/index.html"
     }
   ]
 }
