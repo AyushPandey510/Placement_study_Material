@@ -1,0 +1,7 @@
+beautifulsoup4
+fastapi
+uvicorn
+pillow
+PyMuPDF
+pytesseract
+

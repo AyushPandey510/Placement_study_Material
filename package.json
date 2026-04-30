@@ -1,0 +1,9 @@
+{
+  "name": "placement-prep-vercel",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "cd placement_prep/frontend && npm install && npm run build"
+  }
+}
+

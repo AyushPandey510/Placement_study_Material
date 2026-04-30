@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "buildCommand": "cd placement_prep/frontend && npm install && npm run build",
+  "outputDirectory": "placement_prep/frontend/dist",
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/index.py"
+    },
+    {
+      "source": "/assets/images/(.*)",
+      "destination": "/api/index.py"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

@@ -1,0 +1,1591 @@
+{
+  "generatedAt": 1777577696,
+  "courses": [
+    {
+      "title": "DSA",
+      "topics": [
+        {
+          "title": "Backtracking",
+          "items": [
+            {
+              "id": "DSA/Backtracking/combinations-of-a-sum.md",
+              "title": "Combinations Of A Sum",
+              "course": "DSA",
+              "topic": "Backtracking",
+              "path": "/DSA/Backtracking/combinations-of-a-sum.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Backtracking/Combinations of a Sum.html",
+              "excerpt": "Given an integer array and a target value, find **all unique combinations** in the array where the numbers in each combination sum to the target. Each number in the array may be used an unlimited number of times in the combination. #### Exa",
+              "wordCount": 2137
+            },
+            {
+              "id": "DSA/Backtracking/find-all-permutations.md",
+              "title": "Find All Permutations",
+              "course": "DSA",
+              "topic": "Backtracking",
+              "path": "/DSA/Backtracking/find-all-permutations.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Backtracking/Find All Permutations.html",
+              "excerpt": "Return **all possible permutations** of a given array of unique integers. They can be returned in any order. #### Example: ```python Input: nums = [4, 5, 6] Output: [[4, 5, 6], [4, 6, 5], [5, 4, 6], [5, 6, 4], [6, 4, 5], [6, 5, 4]] ``` ## I",
+              "wordCount": 1842
+            },
+            {
+              "id": "DSA/Backtracking/find-all-subsets.md",
+              "title": "Find All Subsets",
+              "course": "DSA",
+              "topic": "Backtracking",
+              "path": "/DSA/Backtracking/find-all-subsets.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Backtracking/Find All Subsets.html",
+              "excerpt": "Return **all possible subsets** of a given set of unique integers. Each subset can be ordered in any way, and the subsets can be returned in any order. #### Example: ```python Input: nums = [4, 5, 6] Output: [[], [4], [4, 5], [4, 5, 6], [4,",
+              "wordCount": 1193
+            },
+            {
+              "id": "DSA/Backtracking/introduction-to-backtracking.md",
+              "title": "Introduction To Backtracking",
+              "course": "DSA",
+              "topic": "Backtracking",
+              "path": "/DSA/Backtracking/introduction-to-backtracking.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Backtracking/Introduction to Backtracking.html",
+              "excerpt": "## Intuition Imagine you're stuck at an intersection point in a maze, and you know one of the three routes ahead leads to the exit: ![Image represents a flowchart illustrating a coding pattern, possibly related to decision-making or control",
+              "wordCount": 1806
+            },
+            {
+              "id": "DSA/Backtracking/n-queens.md",
+              "title": "N Queens",
+              "course": "DSA",
+              "topic": "Backtracking",
+              "path": "/DSA/Backtracking/n-queens.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Backtracking/N Queens.html",
+              "excerpt": "There is a chessboard of size `n x n`. Your goal is to place `n` queens on the board such that **no two queens attack each other**. Return the number of distinct configurations where this is possible. #### Example: ![Image represents a befo",
+              "wordCount": 1813
+            },
+            {
+              "id": "DSA/Backtracking/phone-keypad-combinations.md",
+              "title": "Phone Keypad Combinations",
+              "course": "DSA",
+              "topic": "Backtracking",
+              "path": "/DSA/Backtracking/phone-keypad-combinations.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Backtracking/Phone Keypad Combinations.html",
+              "excerpt": "You are given a string containing digits from 2 to 9 inclusive. Each digit maps to a set of letters as on a traditional phone keypad: 2 abc 3 def 4 ghi 5 jkl 6 mno 7 pqrs 8 tuv 9 wxyz Return **all possible letter combinations** the input di",
+              "wordCount": 1307
+            }
+          ]
+        },
+        {
+          "title": "BinarySearch",
+          "items": [
+            {
+              "id": "DSA/BinarySearch/cutting-wood.md",
+              "title": "Cutting Wood",
+              "course": "DSA",
+              "topic": "BinarySearch",
+              "path": "/DSA/BinarySearch/cutting-wood.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/BinarySearch/Cutting Wood",
+              "excerpt": "You are given an array representing the heights of trees, and an integer `k` representing the total length of wood that needs to be cut. For this task, a woodcutting machine is set to a certain height, `H`. The machine cuts off the top part",
+              "wordCount": 3706
+            },
+            {
+              "id": "DSA/BinarySearch/find-the-insertion-index.md",
+              "title": "Find The Insertion Index",
+              "course": "DSA",
+              "topic": "BinarySearch",
+              "path": "/DSA/BinarySearch/find-the-insertion-index.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/BinarySearch/Find the Insertion Index.html",
+              "excerpt": "You are given a sorted array that contains unique values, along with an integer target. - If the array contains the target value, return its index. - Otherwise, **return the insertion index**. This is the index where the target would be if ",
+              "wordCount": 3954
+            },
+            {
+              "id": "DSA/BinarySearch/find-the-median-from-two-sorted-arrays.md",
+              "title": "Find The Median From Two Sorted Arrays",
+              "course": "DSA",
+              "topic": "BinarySearch",
+              "path": "/DSA/BinarySearch/find-the-median-from-two-sorted-arrays.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/BinarySearch/Find the Median From Two Sorted Arrays.html",
+              "excerpt": "Given two sorted integer arrays, **find their median value** as if they were merged into a single sorted sequence. #### Example 1: ```python Input: nums1 = [0, 2, 5, 6, 8], nums2 = [1, 3, 7] Output: 4.0 ``` Explanation: Merging both arrays ",
+              "wordCount": 3353
+            },
+            {
+              "id": "DSA/BinarySearch/find-the-target-in-a-rotated-sorted-array.md",
+              "title": "Find The Target In A Rotated Sorted Array",
+              "course": "DSA",
+              "topic": "BinarySearch",
+              "path": "/DSA/BinarySearch/find-the-target-in-a-rotated-sorted-array.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/BinarySearch/Find the Target in a Rotated Sorted Array.html",
+              "excerpt": "A rotated sorted array is an array of numbers sorted in ascending order, in which a portion of the array is moved from the beginning to the end. For example, a possible rotation of `[1, 2, 3, 4, 5]` is `[3, 4, 5, 1, 2]` , where the first tw",
+              "wordCount": 2520
+            },
+            {
+              "id": "DSA/BinarySearch/first-and-last-occurrences-of-a-number.md",
+              "title": "First And Last Occurrences Of A Number",
+              "course": "DSA",
+              "topic": "BinarySearch",
+              "path": "/DSA/BinarySearch/first-and-last-occurrences-of-a-number.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/BinarySearch/First and Last Occurrences of a Number.html",
+              "excerpt": "Given an array of integers sorted in non-decreasing order, return the **first and last indexes** of a target number. If the target is not found, return `[-1, -1]` . #### Example 1: ```python Input: nums = [1, 2, 3, 4, 4, 4, 5, 6, 7, 8, 9, 1",
+              "wordCount": 4407
+            },
+            {
+              "id": "DSA/BinarySearch/introduction-to-binary-search.md",
+              "title": "Introduction To Binary Search",
+              "course": "DSA",
+              "topic": "BinarySearch",
+              "path": "/DSA/BinarySearch/introduction-to-binary-search.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/BinarySearch/Introduction to Binary Search.html",
+              "excerpt": "## Intuition Let's say you have a standard, hard-copy English dictionary, and you want to find the definition of the word \"inheritance.\" How could we do this? One approach is to flick through it page by page, until reaching the page with \"i",
+              "wordCount": 2443
+            },
+            {
+              "id": "DSA/BinarySearch/local-maxima-in-array.md",
+              "title": "Local Maxima In Array",
+              "course": "DSA",
+              "topic": "BinarySearch",
+              "path": "/DSA/BinarySearch/local-maxima-in-array.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/BinarySearch/Local Maxima in Array.html",
+              "excerpt": "A local maxima is a value **greater than both its immediate neighbors**. Return any local maxima in an array. You may assume that an element is always considered to be strictly greater than a neighbor that is outside the array. #### Example",
+              "wordCount": 2682
+            },
+            {
+              "id": "DSA/BinarySearch/matrix-search.md",
+              "title": "Matrix Search",
+              "course": "DSA",
+              "topic": "BinarySearch",
+              "path": "/DSA/BinarySearch/matrix-search.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/BinarySearch/Matrix Search.html",
+              "excerpt": "Determine if a target value exists in a matrix. **Each row of the matrix is sorted** in non-decreasing order, and the first value of each row is greater than or equal to the last value of the previous row. #### Example: ![Image represents a",
+              "wordCount": 2826
+            },
+            {
+              "id": "DSA/BinarySearch/weighted-random-selection.md",
+              "title": "Weighted Random Selection",
+              "course": "DSA",
+              "topic": "BinarySearch",
+              "path": "/DSA/BinarySearch/weighted-random-selection.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/BinarySearch/Weighted Random Selection.html",
+              "excerpt": "Given an array of items, each with a corresponding weight, implement a function that **randomly selects an item from the array**, where the probability of selecting any item is proportional to its weight. In other words, the probability of ",
+              "wordCount": 3950
+            }
+          ]
+        },
+        {
+          "title": "BitManipulation",
+          "items": [
+            {
+              "id": "DSA/BitManipulation/introduction-to-bit-manipulation.md",
+              "title": "Introduction To Bit Manipulation",
+              "course": "DSA",
+              "topic": "BitManipulation",
+              "path": "/DSA/BitManipulation/introduction-to-bit-manipulation.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/BitManipulation/Introduction to Bit Manipulation.html",
+              "excerpt": "## Intuition Bit manipulation is a technique used in programming to perform operations at the bit level, which can often lead to more efficient and faster algorithms. **When is bit manipulation useful?** Bit manipulation allows us to work d",
+              "wordCount": 1098
+            },
+            {
+              "id": "DSA/BitManipulation/hamming-weights-of-integers.md",
+              "title": "Intuition Count Bits For Each Number",
+              "course": "DSA",
+              "topic": "BitManipulation",
+              "path": "/DSA/BitManipulation/hamming-weights-of-integers.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/BitManipulation/Hamming Weights of Integers.html",
+              "excerpt": "The Hamming weight of a number is the **number of set bits** (1-bits) in its binary representation. Given a positive integer `n`, return an `array` where the `ith` element is the Hamming weight of integer `i` for all integers from `0` to `n",
+              "wordCount": 1445
+            },
+            {
+              "id": "DSA/BitManipulation/lonely-integer.md",
+              "title": "Lonely Integer",
+              "course": "DSA",
+              "topic": "BitManipulation",
+              "path": "/DSA/BitManipulation/lonely-integer.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/BitManipulation/Lonely Integer.html",
+              "excerpt": "Given an integer array where each number occurs twice except for one of them, find the **unique number**. #### Example: ```python Input: nums = [1, 3, 3, 2, 1] Output: 2 ``` #### Constraints: - `nums` contains at least one element. ## Intui",
+              "wordCount": 869
+            },
+            {
+              "id": "DSA/BitManipulation/swap-odd-and-even-bits.md",
+              "title": "Swap Odd And Even Bits",
+              "course": "DSA",
+              "topic": "BitManipulation",
+              "path": "/DSA/BitManipulation/swap-odd-and-even-bits.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/BitManipulation/Swap Odd and Even Bits.html",
+              "excerpt": "Given an unsigned 32-bit integer `n`, return an integer where all of `n`'s even bits are **swapped** with their adjacent odd bits. #### Example 1: ![Image represents a diagram illustrating a binary addition process. The diagram shows two ro",
+              "wordCount": 2260
+            }
+          ]
+        },
+        {
+          "title": "DSA",
+          "items": [
+            {
+              "id": "DSA/DSA/largestcontainer.md",
+              "title": "LargestContainer",
+              "course": "DSA",
+              "topic": "DSA",
+              "path": "/DSA/DSA/largestcontainer.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/LargestContainer___Technical_Interview_Prep.html",
+              "excerpt": "You are given an array of numbers, each representing the height of a vertical line on a graph. A container can be formed with any pair of these lines, along with the x-axis of the graph. Return the amount of water which the **largest contai",
+              "wordCount": 2466
+            },
+            {
+              "id": "DSA/DSA/nextlexicographicalsequence.md",
+              "title": "NextLexicographicalSequence",
+              "course": "DSA",
+              "topic": "DSA",
+              "path": "/DSA/DSA/nextlexicographicalsequence.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/NextLexicographicalSequence___Technical_Interview_Prep.html",
+              "excerpt": "Given a string of lowercase English letters, rearrange the characters to form a new string representing the **next immediate sequence in lexicographical** (alphabetical) **order**. If the given string is already last in lexicographical orde",
+              "wordCount": 3007
+            },
+            {
+              "id": "DSA/DSA/pairsumsorted.md",
+              "title": "PairSumSorted",
+              "course": "DSA",
+              "topic": "DSA",
+              "path": "/DSA/DSA/pairsumsorted.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/PairSumSorted___Technical_Interview_Prep.html",
+              "excerpt": "Given an array of integers sorted in ascending order and a target value, return the **indexes of any pair of numbers** in the array that **sum to the target**. The order of the indexes in the result doesn't matter. If no pair is found, retu",
+              "wordCount": 1817
+            },
+            {
+              "id": "DSA/DSA/palindrome.md",
+              "title": "Palindrome",
+              "course": "DSA",
+              "topic": "DSA",
+              "path": "/DSA/DSA/palindrome.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Palindrome___Technical_Interview_Prep.html",
+              "excerpt": "A palindrome is a sequence of characters that **reads the same forward and backward**. Given a string, **determine if it's a palindrome** after removing all non-alphanumeric characters. A character is alphanumeric if it's either a letter or",
+              "wordCount": 2142
+            },
+            {
+              "id": "DSA/DSA/shift-zeroes-toend.md",
+              "title": "Shift Zeroes ToEnd",
+              "course": "DSA",
+              "topic": "DSA",
+              "path": "/DSA/DSA/shift-zeroes-toend.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Shift_zeroes_toEnd___Technical_Interview_Prep.html",
+              "excerpt": "Given an array of integers, modify the array in place to **move all zeros to the end** while maintaining the relative order of non-zero elements. #### Example: ```python Input: nums = [0, 1, 0, 3, 2] Output: [1, 3, 2, 0, 0] ``` ## Intuition",
+              "wordCount": 2590
+            },
+            {
+              "id": "DSA/DSA/tripletsum.md",
+              "title": "TripletSum",
+              "course": "DSA",
+              "topic": "DSA",
+              "path": "/DSA/DSA/tripletsum.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/TripletSum___Technical_Interview_Prep.html",
+              "excerpt": "Given an array of integers, return all triplets `[a, b, c]` such that `a + b + c = 0` . The solution must not contain duplicate triplets (e.g., `[1, 2, 3]` and `[2, 3, 1]` are considered duplicates). If no such triplets are found, return an",
+              "wordCount": 2159
+            },
+            {
+              "id": "DSA/DSA/two-pointer.md",
+              "title": "Two Pointer",
+              "course": "DSA",
+              "topic": "DSA",
+              "path": "/DSA/DSA/two-pointer.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Two_Pointer___Technical_Interview_Prep.html",
+              "excerpt": "## Intuition As the name implies, a two-pointer pattern refers to an algorithm that utilizes two pointers. But what is a pointer? It's a variable that represents an index or position within a data structure, like an array or linked list. Ma",
+              "wordCount": 1873
+            }
+          ]
+        },
+        {
+          "title": "DynamicProgramming",
+          "items": [
+            {
+              "id": "DSA/DynamicProgramming/01-knapsack.md",
+              "title": "01 Knapsack",
+              "course": "DSA",
+              "topic": "DynamicProgramming",
+              "path": "/DSA/DynamicProgramming/01-knapsack.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/DynamicProgramming/01 Knapsack.html",
+              "excerpt": "You are a thief planning to rob a store. However, you can only carry a knapsack with a maximum capacity of `cap` units. Each item (`i`) in the store has a weight (`weights[i]`) and a value (`values[i]`). Find the maximum total value of item",
+              "wordCount": 2910
+            },
+            {
+              "id": "DSA/DynamicProgramming/climbing-stairs.md",
+              "title": "Intuition Top Down",
+              "course": "DSA",
+              "topic": "DynamicProgramming",
+              "path": "/DSA/DynamicProgramming/climbing-stairs.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/DynamicProgramming/Climbing Stairs.html",
+              "excerpt": "Determine the **number of distinct ways** to climb a staircase of `n` steps by taking either 1 or 2 steps at a time. #### Example: ![Image represents five distinct diagrams illustrating a potential coding pattern, likely related to data flo",
+              "wordCount": 2300
+            },
+            {
+              "id": "DSA/DynamicProgramming/minimum-coin-combination.md",
+              "title": "Intuition Top Down",
+              "course": "DSA",
+              "topic": "DynamicProgramming",
+              "path": "/DSA/DynamicProgramming/minimum-coin-combination.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/DynamicProgramming/Minimum Coin Combination.html",
+              "excerpt": "You are given an array of coin values and a target amount of money. Return the **minimum number of coins** needed to total the target amount. If this isn't possible, return \u20101. You may assume there's an unlimited supply of each coin. #### E",
+              "wordCount": 2135
+            },
+            {
+              "id": "DSA/DynamicProgramming/largest-square-in-a-matrix.md",
+              "title": "Largest Square In A Matrix",
+              "course": "DSA",
+              "topic": "DynamicProgramming",
+              "path": "/DSA/DynamicProgramming/largest-square-in-a-matrix.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/DynamicProgramming/Largest Square in a Matrix.html",
+              "excerpt": "Determine the **area of the largest square** of 1's in a binary matrix. #### Example: ![Image represents a 5x5 matrix, visually depicted as a grid of cells, each containing a binary digit (either '0' or '1'). The matrix is enclosed within a",
+              "wordCount": 2400
+            },
+            {
+              "id": "DSA/DynamicProgramming/longest-common-subsequence.md",
+              "title": "Longest Common Subsequence",
+              "course": "DSA",
+              "topic": "DynamicProgramming",
+              "path": "/DSA/DynamicProgramming/longest-common-subsequence.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/DynamicProgramming/Longest Common Subsequence.html",
+              "excerpt": "Given two strings, find the **length of their longest common subsequence** (LCS). A subsequence is a sequence of characters that can be derived from a string by deleting zero or more elements, without changing the order of the remaining ele",
+              "wordCount": 2787
+            },
+            {
+              "id": "DSA/DynamicProgramming/longest-palindrome-in-a-string.md",
+              "title": "Longest Palindrome In A String",
+              "course": "DSA",
+              "topic": "DynamicProgramming",
+              "path": "/DSA/DynamicProgramming/longest-palindrome-in-a-string.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/DynamicProgramming/Longest Palindrome in a String.html",
+              "excerpt": "Return the **longest palindromic substring** within a given string. #### Example: ```python Input: s = 'abccbaba' Output: 'abccba' ``` ## Intuition A naive solution to this problem is to check every possible substring and save the longest p",
+              "wordCount": 2111
+            },
+            {
+              "id": "DSA/DynamicProgramming/matrix-pathways.md",
+              "title": "Matrix Pathways",
+              "course": "DSA",
+              "topic": "DynamicProgramming",
+              "path": "/DSA/DynamicProgramming/matrix-pathways.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/DynamicProgramming/Matrix Pathways.html",
+              "excerpt": "You are positioned at the top-left corner of a `m \u00d7 n` matrix, and can only move **downward** or **rightward** through the matrix. Determine the **number of unique pathways** you can take to reach the bottom-right corner of the matrix. ####",
+              "wordCount": 2004
+            },
+            {
+              "id": "DSA/DynamicProgramming/maximum-subarray-sum.md",
+              "title": "Maximum Subarray Sum",
+              "course": "DSA",
+              "topic": "DynamicProgramming",
+              "path": "/DSA/DynamicProgramming/maximum-subarray-sum.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/DynamicProgramming/Maximum Subarray Sum.html",
+              "excerpt": "Given an array of integers, return the `sum` of the subarray with the **largest sum**. #### Example: ```python Input: nums = [3, 1, -6, 2, -1, 4, -9] Output: 5 ``` Explanation: subarray `[2, -1, 4]` has the largest sum of 5. #### Constraint",
+              "wordCount": 3631
+            },
+            {
+              "id": "DSA/DynamicProgramming/neighborhood-burglary.md",
+              "title": "Neighborhood Burglary",
+              "course": "DSA",
+              "topic": "DynamicProgramming",
+              "path": "/DSA/DynamicProgramming/neighborhood-burglary.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/DynamicProgramming/Neighborhood Burglary.html",
+              "excerpt": "You plan to rob houses in a street where each house stores a certain amount of money. The neighborhood has a security system that sets off an alarm when two adjacent houses are robbed. Return the **maximum amount of cash** that can be stole",
+              "wordCount": 1742
+            },
+            {
+              "id": "DSA/DynamicProgramming/introduction-to-dynamic-programming.md",
+              "title": "Real World Example",
+              "course": "DSA",
+              "topic": "DynamicProgramming",
+              "path": "/DSA/DynamicProgramming/introduction-to-dynamic-programming.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/DynamicProgramming/Introduction to Dynamic Programming.html",
+              "excerpt": "Dynamic programming (DP) may seem daunting at first, but we\u2019ll break it down into manageable concepts and techniques. First, let\u2019s get an idea of what DP aims to do by considering the bigger picture. Some problems can be broken down into **",
+              "wordCount": 706
+            }
+          ]
+        },
+        {
+          "title": "FastAndSlowPointers",
+          "items": [
+            {
+              "id": "DSA/FastAndSlowPointers/happynumber.md",
+              "title": "HappyNumber",
+              "course": "DSA",
+              "topic": "FastAndSlowPointers",
+              "path": "/DSA/FastAndSlowPointers/happynumber.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/FastAndSlowPointers/HappyNumber___Technical_Interview_Prep.html",
+              "excerpt": "In number theory, a happy number is defined as a number that, when repeatedly subjected to the process of **squaring its digits and summing those squares**, eventually leads to 1. An unhappy number will never reach 1 during this process, an",
+              "wordCount": 1936
+            },
+            {
+              "id": "DSA/FastAndSlowPointers/introductiontofastandslowpointers.md",
+              "title": "IntroductiontoFastandSlowPointers",
+              "course": "DSA",
+              "topic": "FastAndSlowPointers",
+              "path": "/DSA/FastAndSlowPointers/introductiontofastandslowpointers.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/FastAndSlowPointers/IntroductiontoFastandSlowPointers___Technical_Interview_Prep.html",
+              "excerpt": "## Intuition The fast and slow pointer technique is a specialized variant of the two-pointer pattern, characterized by the differing speeds at which two pointers traverse a data structure. In this technique, we designate a fast pointer and ",
+              "wordCount": 639
+            },
+            {
+              "id": "DSA/FastAndSlowPointers/linkedlistloop.md",
+              "title": "LinkedListLoop",
+              "course": "DSA",
+              "topic": "FastAndSlowPointers",
+              "path": "/DSA/FastAndSlowPointers/linkedlistloop.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/FastAndSlowPointers/LinkedListLoop___Technical_Interview_Prep.html",
+              "excerpt": "Given a singly linked list, determine if it contains a **cycle**. A cycle occurs if a node's next pointer references an earlier node in the linked list, causing a loop. #### Example: ![Image represents a state diagram illustrating a coding ",
+              "wordCount": 2222
+            },
+            {
+              "id": "DSA/FastAndSlowPointers/linkedlistmidpoint.md",
+              "title": "LinkedListMidpoint",
+              "course": "DSA",
+              "topic": "FastAndSlowPointers",
+              "path": "/DSA/FastAndSlowPointers/linkedlistmidpoint.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/FastAndSlowPointers/LinkedListMidpoint___Technical_Interview_Prep.html",
+              "excerpt": "Given a singly linked list, find and return its **middle node**. If there are two middle nodes, return the second one. #### Example 1: ![Image represents a directed graph illustrating a sequence of steps or a process flow. The graph consist",
+              "wordCount": 2075
+            }
+          ]
+        },
+        {
+          "title": "Graphs",
+          "items": [
+            {
+              "id": "DSA/Graphs/bipartite-graph-validation.md",
+              "title": "Bipartite Graph Validation",
+              "course": "DSA",
+              "topic": "Graphs",
+              "path": "/DSA/Graphs/bipartite-graph-validation.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Graphs/Bipartite Graph Validation.html",
+              "excerpt": "Given an undirected graph, determine if it's bipartite. A graph is bipartite if the nodes can be colored in one of two colors, so that **no two adjacent nodes are the same color**. The input is presented as an adjacency list, where `graph[i",
+              "wordCount": 2135
+            },
+            {
+              "id": "DSA/Graphs/connect-the-dots.md",
+              "title": "Connect The Dots",
+              "course": "DSA",
+              "topic": "Graphs",
+              "path": "/DSA/Graphs/connect-the-dots.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Graphs/Connect the Dots.html",
+              "excerpt": "Given a set of points on a plane, determine the **minimum cost to connect all these points**. The cost of connecting two points is equal to the **Manhattan distance** between them, which is calculated as `|x1 - x2| + |y1 - y2|` for two poin",
+              "wordCount": 2430
+            },
+            {
+              "id": "DSA/Graphs/count-islands.md",
+              "title": "Count Islands",
+              "course": "DSA",
+              "topic": "Graphs",
+              "path": "/DSA/Graphs/count-islands.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Graphs/Count Islands.html",
+              "excerpt": "Given a binary matrix representing 1s as land and 0s as water, **return the number of islands**. An island is formed by connecting adjacent lands 4-directionally (up, down, left, and right). #### Example: ![Image represents a 4x4 matrix, vi",
+              "wordCount": 2574
+            },
+            {
+              "id": "DSA/Graphs/graph-deep-copy.md",
+              "title": "Graph Deep Copy",
+              "course": "DSA",
+              "topic": "Graphs",
+              "path": "/DSA/Graphs/graph-deep-copy.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Graphs/Graph Deep Copy.html",
+              "excerpt": "Given a reference to a node within an undirected graph, create a **deep copy** (clone) of the graph. The copied graph must be completely independent of the original one. This means you need to make new nodes for the copied graph instead of ",
+              "wordCount": 1915
+            },
+            {
+              "id": "DSA/Graphs/introduction-to-graphs.md",
+              "title": "Introduction To Graphs",
+              "course": "DSA",
+              "topic": "Graphs",
+              "path": "/DSA/Graphs/introduction-to-graphs.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Graphs/Introduction to Graphs.html",
+              "excerpt": "## Intuition A graph is a data structure composed of nodes (vertices) connected by edges. Graphs are used to model relationships, where the edges define the relationships. Below is the implementation of the `GraphNode` class: ```python clas",
+              "wordCount": 1189
+            },
+            {
+              "id": "DSA/Graphs/longest-increasing-path.md",
+              "title": "Longest Increasing Path",
+              "course": "DSA",
+              "topic": "Graphs",
+              "path": "/DSA/Graphs/longest-increasing-path.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Graphs/Longest Increasing Path.html",
+              "excerpt": "Find the **longest strictly increasing path** in a matrix of positive integers. A path is a sequence of cells where each one is 4-directionally adjacent (up, down, left, or right) to the previous one. #### Example: ![Image represents a 3x3 ",
+              "wordCount": 1825
+            },
+            {
+              "id": "DSA/Graphs/matrix-infection.md",
+              "title": "Matrix Infection",
+              "course": "DSA",
+              "topic": "Graphs",
+              "path": "/DSA/Graphs/matrix-infection.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Graphs/Matrix Infection.html",
+              "excerpt": "You are given a matrix where each cell is either: `0`: Empty `1`: Uninfected `2`: Infected With each passing second, every infected cell (2) infects its uninfected neighboring cells (1) that are 4-directionally adjacent. Determine the numbe",
+              "wordCount": 3945
+            },
+            {
+              "id": "DSA/Graphs/merging-communities.md",
+              "title": "Merging Communities",
+              "course": "DSA",
+              "topic": "Graphs",
+              "path": "/DSA/Graphs/merging-communities.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Graphs/Merging Communities.html",
+              "excerpt": "There are `n` people numbered from `0` to `n - 1` , with each person initially belonging to a separate community. When two people from different communities connect, their communities merge into a single community. Your goal is to write two",
+              "wordCount": 3849
+            },
+            {
+              "id": "DSA/Graphs/prerequisites.md",
+              "title": "Prerequisites",
+              "course": "DSA",
+              "topic": "Graphs",
+              "path": "/DSA/Graphs/prerequisites.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Graphs/Prerequisites.html",
+              "excerpt": "Given an integer `n` representing the number of courses labeled from `0` to `n - 1`, and an array of prerequisite pairs, determine if it's possible to enroll in all courses. Each prerequisite is represented as a pair `[a, b]`, indicating th",
+              "wordCount": 2855
+            },
+            {
+              "id": "DSA/Graphs/shortest-path.md",
+              "title": "Shortest Path",
+              "course": "DSA",
+              "topic": "Graphs",
+              "path": "/DSA/Graphs/shortest-path.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Graphs/Shortest Path.html",
+              "excerpt": "Given an integer `n` representing nodes labeled from `0` to `n - 1` in an undirected graph, and an array of non-negative weighted edges, return an array where each index `i` contains the **shortest path length** from a specified start node ",
+              "wordCount": 4077
+            },
+            {
+              "id": "DSA/Graphs/shortest-transformation-sequence.md",
+              "title": "Shortest Transformation Sequence",
+              "course": "DSA",
+              "topic": "Graphs",
+              "path": "/DSA/Graphs/shortest-transformation-sequence.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Graphs/Shortest Transformation Sequence.html",
+              "excerpt": "Given two words, `start` and `end`, and a dictionary containing an array of words, return the **length of the shortest transformation sequence** to transform start to end. A transformation sequence is a series of words in which: - Each word",
+              "wordCount": 3384
+            }
+          ]
+        },
+        {
+          "title": "Greedy",
+          "items": [
+            {
+              "id": "DSA/Greedy/candies.md",
+              "title": "Candies",
+              "course": "DSA",
+              "topic": "Greedy",
+              "path": "/DSA/Greedy/candies.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Greedy/Candies.html",
+              "excerpt": "You teach a class of children sitting in a row, each of whom has a rating based on their performance. You want to **distribute candies** to the children while abiding by the following rules: - Each child must receive at least one candy. - I",
+              "wordCount": 3233
+            },
+            {
+              "id": "DSA/Greedy/gas-stations.md",
+              "title": "Gas Stations",
+              "course": "DSA",
+              "topic": "Greedy",
+              "path": "/DSA/Greedy/gas-stations.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Greedy/Gas Stations.html",
+              "excerpt": "There's a circular route which contains gas stations. At each station, you can fill your car with a certain amount of gas, and moving from that station to the next one consumes some fuel. Find the **index of the gas station you would need t",
+              "wordCount": 3824
+            },
+            {
+              "id": "DSA/Greedy/introduction-to-greedy-algorithms.md",
+              "title": "Introduction To Greedy Algorithms",
+              "course": "DSA",
+              "topic": "Greedy",
+              "path": "/DSA/Greedy/introduction-to-greedy-algorithms.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Greedy/Introduction to Greedy Algorithms.html",
+              "excerpt": "## Intuition Greedy algorithms are a class of algorithms that make a series of decisions, where each decision is the best immediate choice given the options available. To understand this, let\u2019s dive into an analogy. Imagine you're planning ",
+              "wordCount": 890
+            },
+            {
+              "id": "DSA/Greedy/jump-to-the-end.md",
+              "title": "Jump To The End",
+              "course": "DSA",
+              "topic": "Greedy",
+              "path": "/DSA/Greedy/jump-to-the-end.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Greedy/Jump to the End.html",
+              "excerpt": "You are given an integer array in which you're originally positioned at index 0. Each number in the array represents the **maximum jump distance** from the current index. Determine if it's possible to reach the end of the array. #### Exampl",
+              "wordCount": 3031
+            }
+          ]
+        },
+        {
+          "title": "HashMap Set",
+          "items": [
+            {
+              "id": "DSA/HashMap Set/geometricsequencetriplets.md",
+              "title": "GeometricSequenceTriplets",
+              "course": "DSA",
+              "topic": "HashMap Set",
+              "path": "/DSA/HashMap Set/geometricsequencetriplets.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/HashMap-Set/GeometricSequenceTriplets___Technical_Interview_Prep.html",
+              "excerpt": "A geometric sequence triplet is a **sequence of three numbers** where each successive number is obtained by multiplying the preceding number by a constant called the **common ratio**. Let's examine three triplets to understand how this work",
+              "wordCount": 4168
+            },
+            {
+              "id": "DSA/HashMap Set/hashmapandset.md",
+              "title": "HashMapandSET",
+              "course": "DSA",
+              "topic": "HashMap Set",
+              "path": "/DSA/HashMap Set/hashmapandset.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/HashMap-Set/HashMapandSET___Technical_Interview_Prep.html",
+              "excerpt": "## Intuition Picture working in a grocery store. A customer asks for the price of a fruit. If you just have a paper list of all the fruits, you would need to look through it to find the specific fruit, which can be time-consuming. However, ",
+              "wordCount": 1077
+            },
+            {
+              "id": "DSA/HashMap Set/zero-striping.md",
+              "title": "Intuition Hash Sets",
+              "course": "DSA",
+              "topic": "HashMap Set",
+              "path": "/DSA/HashMap Set/zero-striping.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/HashMap-Set/Zero Striping___Technical_Interview_Prep.html",
+              "excerpt": "For each zero in an `m x n` matrix, set its entire row and column to zero **in place**. ![Image represents a transformation of a 4x5 matrix. The initial matrix on the left displays numerical values from 1 to 19, arranged in a grid with rows",
+              "wordCount": 3953
+            },
+            {
+              "id": "DSA/HashMap Set/longestchainofconsecutivenumbers.md",
+              "title": "LongestChainofConsecutiveNumbers",
+              "course": "DSA",
+              "topic": "HashMap Set",
+              "path": "/DSA/HashMap Set/longestchainofconsecutivenumbers.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/HashMap-Set/LongestChainofConsecutiveNumbers___Technical_Interview_Prep.html",
+              "excerpt": "Find the **longest chain of consecutive numbers** in an array. Two numbers are consecutive if they have a difference of 1. #### Example: ```python Input: nums = [1, 6, 2, 5, 8, 7, 10, 3] Output: 4 ``` Explanation: The longest chain of conse",
+              "wordCount": 1496
+            },
+            {
+              "id": "DSA/HashMap Set/pairsum-unsorted.md",
+              "title": "PairSUm Unsorted",
+              "course": "DSA",
+              "topic": "HashMap Set",
+              "path": "/DSA/HashMap Set/pairsum-unsorted.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/HashMap-Set/PairSUm-Unsorted___Technical_Interview_Prep.html",
+              "excerpt": "Given an array of integers, return the indexes of **any two numbers that add up to a target**. The order of the indexes in the result doesn't matter. If no pair is found, return an empty array. #### Example: ```python Input: nums = [-1, 3, ",
+              "wordCount": 1824
+            },
+            {
+              "id": "DSA/HashMap Set/verifysudokuboard.md",
+              "title": "VerifySudokuBoard",
+              "course": "DSA",
+              "topic": "HashMap Set",
+              "path": "/DSA/HashMap Set/verifysudokuboard.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/HashMap-Set/VerifySudokuBoard___Technical_Interview_Prep.html",
+              "excerpt": "- Each row and column must contain unique numbers between 1 and 9, or be empty (represented as 0). - Each of the nine 3\u00d73 subgrids that compose the grid must contain unique numbers between 1 and 9, or be empty. Note: You are asked to determ",
+              "wordCount": 2497
+            }
+          ]
+        },
+        {
+          "title": "Heaps",
+          "items": [
+            {
+              "id": "DSA/Heaps/combine-sorted-linked-lists.md",
+              "title": "Combine Sorted Linked Lists",
+              "course": "DSA",
+              "topic": "Heaps",
+              "path": "/DSA/Heaps/combine-sorted-linked-lists.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Heaps/Combine Sorted Linked Lists.html",
+              "excerpt": "Given `k` singly linked lists, each sorted in ascending order, **combine them** into one sorted linked list. #### Example: ![Image represents a directed acyclic graph illustrating a coding pattern, possibly related to data flow or function ",
+              "wordCount": 3108
+            },
+            {
+              "id": "DSA/Heaps/introduction-to-heaps.md",
+              "title": "Introduction To Heaps",
+              "course": "DSA",
+              "topic": "Heaps",
+              "path": "/DSA/Heaps/introduction-to-heaps.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Heaps/Introduction to Heaps.html",
+              "excerpt": "## Intuition A heap is a data structure that organizes elements based on priority, ensuring the highest-priority element is always at the top of the heap. This allows for efficient access to the highest-priority element at any time. There a",
+              "wordCount": 731
+            },
+            {
+              "id": "DSA/Heaps/k-most-frequent-strings.md",
+              "title": "Intuition Max Heap",
+              "course": "DSA",
+              "topic": "Heaps",
+              "path": "/DSA/Heaps/k-most-frequent-strings.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Heaps/K Most Frequent Strings.html",
+              "excerpt": "Find the `k` most frequently occurring strings in an array, and return them sorted by frequency in descending order. If two strings have the same frequency, sort them in lexicographical order. ### Example: ```python Input: strs = ['go', 'co",
+              "wordCount": 3070
+            },
+            {
+              "id": "DSA/Heaps/median-of-an-integer-stream.md",
+              "title": "Median Of An Integer Stream",
+              "course": "DSA",
+              "topic": "Heaps",
+              "path": "/DSA/Heaps/median-of-an-integer-stream.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Heaps/Median of an Integer Stream.html",
+              "excerpt": "Design a data structure that supports adding integers from a data stream and retrieving the **median** of all elements received at any point. - `add(num: int) -> None`: adds an integer to the data structure. - `get_median() -> float`: retur",
+              "wordCount": 2424
+            },
+            {
+              "id": "DSA/Heaps/sort-a-k-sorted-array.md",
+              "title": "Sort A K Sorted Array",
+              "course": "DSA",
+              "topic": "Heaps",
+              "path": "/DSA/Heaps/sort-a-k-sorted-array.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Heaps/Sort a K-Sorted Array.html",
+              "excerpt": "Given an integer array where each element is at most `k` positions away from its sorted position, **sort the array** in a non-decreasing order. #### Example: ```python Input: nums = [5, 1, 9, 4, 7, 10], k = 2 Output: [1, 4, 5, 7, 9, 10] ```",
+              "wordCount": 4154
+            }
+          ]
+        },
+        {
+          "title": "Intervals",
+          "items": [
+            {
+              "id": "DSA/Intervals/identify-all-interval-overlaps.md",
+              "title": "Identify All Interval Overlaps",
+              "course": "DSA",
+              "topic": "Intervals",
+              "path": "/DSA/Intervals/identify-all-interval-overlaps.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Intervals/Identify All Interval Overlaps.html",
+              "excerpt": "Return an array of **all overlaps** between two arrays of intervals; `intervals1` and `intervals2`. Each individual interval array is sorted by start value, and contains no overlapping intervals within itself. #### Example: ![Image represen",
+              "wordCount": 2079
+            },
+            {
+              "id": "DSA/Intervals/introduction-to-intervals.md",
+              "title": "Introduction To Intervals",
+              "course": "DSA",
+              "topic": "Intervals",
+              "path": "/DSA/Intervals/introduction-to-intervals.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Intervals/Introduction to Intervals.html",
+              "excerpt": "## Intuition An interval consists of two values: a start point and an end point. It represents a continuous segment on the number line that includes all values between these two points. It is often used to represent a line, time period, or ",
+              "wordCount": 1269
+            },
+            {
+              "id": "DSA/Intervals/largest-overlap-of-intervals.md",
+              "title": "Largest Overlap Of Intervals",
+              "course": "DSA",
+              "topic": "Intervals",
+              "path": "/DSA/Intervals/largest-overlap-of-intervals.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Intervals/Largest Overlap of Intervals.html",
+              "excerpt": "Given an array of intervals, determine the maximum number of intervals that overlap at any point. Each interval is half-open, meaning it includes the start point but excludes the end point. #### Example: ![Image represents a horizontal numb",
+              "wordCount": 2246
+            },
+            {
+              "id": "DSA/Intervals/merge-overlapping-intervals.md",
+              "title": "Merge Overlapping Intervals",
+              "course": "DSA",
+              "topic": "Intervals",
+              "path": "/DSA/Intervals/merge-overlapping-intervals.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Intervals/Merge Overlapping Intervals.html",
+              "excerpt": "**Merge** an array of intervals so there are no overlapping intervals, and return the resultant merged intervals. #### Example: ![Image represents a Gantt chart illustrating task scheduling. A horizontal time axis is numbered from 1 to 8, r",
+              "wordCount": 3097
+            }
+          ]
+        },
+        {
+          "title": "LinkedLists",
+          "items": [
+            {
+              "id": "DSA/LinkedLists/flattenamulti-levellinkedlist.md",
+              "title": "FlattenaMulti LevelLinkedList",
+              "course": "DSA",
+              "topic": "LinkedLists",
+              "path": "/DSA/LinkedLists/flattenamulti-levellinkedlist.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/LinkedLists/FlattenaMulti-LevelLinkedList___Technical_Interview_Prep.html",
+              "excerpt": "In a multi-level linked list, each node has a `next` pointer and `child` pointer. The next pointer connects to the subsequent node in the same linked list, while the child pointer points to the head of a new linked list under it. This creat",
+              "wordCount": 3105
+            },
+            {
+              "id": "DSA/LinkedLists/introductiontolinkedlists.md",
+              "title": "IntroductiontoLinkedLists",
+              "course": "DSA",
+              "topic": "LinkedLists",
+              "path": "/DSA/LinkedLists/introductiontolinkedlists.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/LinkedLists/IntroductiontoLinkedLists___Technical_Interview_Prep.html",
+              "excerpt": "## Intuition A linked list is a data structure consisting of a sequence of nodes, where each node is linked to the next. A node in a linked list has two main components: the data it stores (`val`) and a reference to the next node (`next`) i",
+              "wordCount": 1559
+            },
+            {
+              "id": "DSA/LinkedLists/linkedlistreversal.md",
+              "title": "Intuition Iterative",
+              "course": "DSA",
+              "topic": "LinkedLists",
+              "path": "/DSA/LinkedLists/linkedlistreversal.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/LinkedLists/LinkedListReversal___Technical_Interview_Prep.html",
+              "excerpt": "Reverse a singly linked list. #### Example: ![Image represents two directed acyclic graphs (DAGs) arranged vertically. The top DAG consists of five nodes labeled 1, 2, 4, 7, and 3, connected sequentially by directed edges (arrows) in that o",
+              "wordCount": 4345
+            },
+            {
+              "id": "DSA/LinkedLists/lrucache.md",
+              "title": "LRUCache",
+              "course": "DSA",
+              "topic": "LinkedLists",
+              "path": "/DSA/LinkedLists/lrucache.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/LinkedLists/LRUCache___Technical_Interview_Prep.html",
+              "excerpt": "Design and implement a data structure for the Least Recently Used (LRU) cache that supports the following operations: - `LRUCache(capacity: int)`: Initialize an LRU cache with the specified capacity. - `get(key: int) -> int`: Return the val",
+              "wordCount": 4277
+            },
+            {
+              "id": "DSA/LinkedLists/linkedlistintersection.md",
+              "title": "LinkedListIntersection",
+              "course": "DSA",
+              "topic": "LinkedLists",
+              "path": "/DSA/LinkedLists/linkedlistintersection.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/LinkedLists/LinkedListIntersection___Technical_Interview_Prep.html",
+              "excerpt": "Return the node where two singly linked lists **intersect**. If the linked lists don't intersect, return null. #### Example: ![The image represents a directed acyclic graph (DAG) illustrating two distinct paths, labeled 'A:' and 'B:'. Path ",
+              "wordCount": 1700
+            },
+            {
+              "id": "DSA/LinkedLists/palindromiclinkedlist.md",
+              "title": "PalindromicLinkedList",
+              "course": "DSA",
+              "topic": "LinkedLists",
+              "path": "/DSA/LinkedLists/palindromiclinkedlist.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/LinkedLists/PalindromicLinkedList___Technical_Interview_Prep.html",
+              "excerpt": "Given the head of a singly linked list, determine if it's a palindrome. #### Example 1: ![Image represents a directed graph illustrating a sequence of states or steps. Five circular nodes, labeled sequentially from 1 to 5, are arranged hori",
+              "wordCount": 1640
+            },
+            {
+              "id": "DSA/LinkedLists/removethekthlastnodefromalinkedlist.md",
+              "title": "RemovetheKthLastNodeFromaLinkedList",
+              "course": "DSA",
+              "topic": "LinkedLists",
+              "path": "/DSA/LinkedLists/removethekthlastnodefromalinkedlist.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/LinkedLists/RemovetheKthLastNodeFromaLinkedList___Technical_Interview_Prep.html",
+              "excerpt": "Return the head of a singly linked list after removing the kth node from the end of it. #### Example: ![The image represents a linked list data structure illustrating the concept of finding the k<sup>th</sup> to last element. The top row sh",
+              "wordCount": 2376
+            }
+          ]
+        },
+        {
+          "title": "MathAndGeometry",
+          "items": [
+            {
+              "id": "DSA/MathAndGeometry/introduction-to-math-and-geometry.md",
+              "title": "Introduction To Math And Geometry",
+              "course": "DSA",
+              "topic": "MathAndGeometry",
+              "path": "/DSA/MathAndGeometry/introduction-to-math-and-geometry.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/MathAndGeometry/Introduction to Math and Geometry.html",
+              "excerpt": "## Intuition This chapter tackles several problems relating to important math and geometry concepts in programming, which regularly appear in technical interviews. We explore subjects such as: - Greatest common divisor (GCD). - Modular arit",
+              "wordCount": 230
+            },
+            {
+              "id": "DSA/MathAndGeometry/maximum-collinear-points.md",
+              "title": "Maximum Collinear Points",
+              "course": "DSA",
+              "topic": "MathAndGeometry",
+              "path": "/DSA/MathAndGeometry/maximum-collinear-points.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/MathAndGeometry/Maximum Collinear Points.html",
+              "excerpt": "Given a set of points in a two-dimensional plane, determine the **maximum number of points** that lie along the same straight line. #### Example: ![Image represents a Cartesian coordinate system with a labeled x-axis and y-axis ranging from",
+              "wordCount": 2458
+            },
+            {
+              "id": "DSA/MathAndGeometry/reverse-32-bit-integer.md",
+              "title": "Reverse 32 Bit Integer",
+              "course": "DSA",
+              "topic": "MathAndGeometry",
+              "path": "/DSA/MathAndGeometry/reverse-32-bit-integer.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/MathAndGeometry/Reverse 32-Bit Integer.html",
+              "excerpt": "**Reverse the digits** of a signed 32-bit integer. If the reversed integer overflows (i.e., is outside the range [\u2212 2 31 -2^{31} \u2212 2 31, 2 31 \u2212 1 2^{31} - 1 2 31 \u2212 1]), return 0. Assume the environment only allows you to store integers with",
+              "wordCount": 2891
+            },
+            {
+              "id": "DSA/MathAndGeometry/spiral-traversal.md",
+              "title": "Spiral Traversal",
+              "course": "DSA",
+              "topic": "MathAndGeometry",
+              "path": "/DSA/MathAndGeometry/spiral-traversal.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/MathAndGeometry/Spiral Traversal.html",
+              "excerpt": "Return the elements of a matrix in **clockwise spiral order**. #### Example: ![Image represents a grid-based diagram illustrating a linear data structure traversal pattern, possibly demonstrating a specific algorithm or data flow. The diagr",
+              "wordCount": 2148
+            },
+            {
+              "id": "DSA/MathAndGeometry/the-josephus-problem.md",
+              "title": "The Josephus Problem",
+              "course": "DSA",
+              "topic": "MathAndGeometry",
+              "path": "/DSA/MathAndGeometry/the-josephus-problem.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/MathAndGeometry/The Josephus Problem.html",
+              "excerpt": "There are `n` people standing in a circle, numbered from `0` to `n - 1`. Starting from person 0, count `k` people clockwise and remove the `kth` person. After the removal, begin counting again from the next person still in the circle. Repea",
+              "wordCount": 1296
+            },
+            {
+              "id": "DSA/MathAndGeometry/triangle-numbers.md",
+              "title": "Triangle Numbers",
+              "course": "DSA",
+              "topic": "MathAndGeometry",
+              "path": "/DSA/MathAndGeometry/triangle-numbers.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/MathAndGeometry/Triangle Numbers.html",
+              "excerpt": "Consider a triangle composed of numbers where the top of the triangle is 1. Each subsequent number in the triangle is equal to the **sum of three numbers above it**: its top-left number, its top number, and its top-right number. If any of t",
+              "wordCount": 2174
+            }
+          ]
+        },
+        {
+          "title": "PrefixSums",
+          "items": [
+            {
+              "id": "DSA/PrefixSums/introduction-to-prefix-sums.md",
+              "title": "Introduction To Prefix Sums",
+              "course": "DSA",
+              "topic": "PrefixSums",
+              "path": "/DSA/PrefixSums/introduction-to-prefix-sums.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/PrefixSums/Introduction to Prefix Sums.html",
+              "excerpt": "## Intuition Imagine keeping track of how much money you spend on takeout meals each day over a period of days. ![Image represents a Python-like list assignment. The variable `spendings` is assigned a list containing five integer values: `1",
+              "wordCount": 920
+            },
+            {
+              "id": "DSA/PrefixSums/k-sum-subarrays.md",
+              "title": "K Sum Subarrays",
+              "course": "DSA",
+              "topic": "PrefixSums",
+              "path": "/DSA/PrefixSums/k-sum-subarrays.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/PrefixSums/K-Sum Subarrays.html",
+              "excerpt": "Find the number of subarrays in an integer array that sum to `k`. #### Example: ![Image represents three identical arrays, each enclosed in square brackets `[]`, containing the integer sequence `[1, 2, -1, 1, 2]`. Each array is displayed ho",
+              "wordCount": 2867
+            },
+            {
+              "id": "DSA/PrefixSums/product-array-without-current-element.md",
+              "title": "Product Array Without Current Element",
+              "course": "DSA",
+              "topic": "PrefixSums",
+              "path": "/DSA/PrefixSums/product-array-without-current-element.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/PrefixSums/Product Array Without Current Element.html",
+              "excerpt": "Given an array of integers, return an array res so that `res[i]` is equal to the product of all the elements of the input array except `nums[i]` itself. #### Example: ```python Input: nums = [2, 3, 1, 4, 5] Output: [60, 40, 120, 30, 24] ```",
+              "wordCount": 3722
+            },
+            {
+              "id": "DSA/PrefixSums/sum-between-range.md",
+              "title": "Sum Between Range",
+              "course": "DSA",
+              "topic": "PrefixSums",
+              "path": "/DSA/PrefixSums/sum-between-range.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/PrefixSums/Sum Between Range.html",
+              "excerpt": "Given an integer array, write a function which returns the **sum of values between two indexes**. #### Example: ![Image represents three examples of a `sum_range` function operating on a numerical array `[3, -7, 6, 0, -2, 5]`. Each example ",
+              "wordCount": 1390
+            }
+          ]
+        },
+        {
+          "title": "SlidingWindows",
+          "items": [
+            {
+              "id": "DSA/SlidingWindows/introduction-to-sliding-windows.md",
+              "title": "Introduction To Sliding Windows",
+              "course": "DSA",
+              "topic": "SlidingWindows",
+              "path": "/DSA/SlidingWindows/introduction-to-sliding-windows.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/SlidingWindows/Introduction to Sliding Windows.html",
+              "excerpt": "## Intuition The sliding window technique is a subset of the two-pointer pattern, as it uses two pointers (generally left and right) to define the bounds of a \"window\" in iterable data structures like arrays. The window defines a subcompone",
+              "wordCount": 1340
+            },
+            {
+              "id": "DSA/SlidingWindows/longest-substring-with-unique-characters.md",
+              "title": "Longest Substring With Unique Characters",
+              "course": "DSA",
+              "topic": "SlidingWindows",
+              "path": "/DSA/SlidingWindows/longest-substring-with-unique-characters.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/SlidingWindows/Longest Substring With Unique Characters.html",
+              "excerpt": "Given a string, determine the length of its longest substring that consists only of **unique characters**. #### Example: ```python Input: s = 'abcba' Output: 3 ``` Explanation: Substring \"abc\" is the longest substring of length 3 that conta",
+              "wordCount": 3112
+            },
+            {
+              "id": "DSA/SlidingWindows/longest-uniform-substring-after-replacements.md",
+              "title": "Longest Uniform Substring After Replacements",
+              "course": "DSA",
+              "topic": "SlidingWindows",
+              "path": "/DSA/SlidingWindows/longest-uniform-substring-after-replacements.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/SlidingWindows/Longest Uniform Substring After Replacements.html",
+              "excerpt": "A **uniform** substring is one in which all characters are identical. Given a string, determine the `length` of the longest uniform substring that can be formed by **replacing up to k characters**. #### Example: ![The image represents a vis",
+              "wordCount": 3881
+            },
+            {
+              "id": "DSA/SlidingWindows/substringanagrams.md",
+              "title": "SubstringAnagrams",
+              "course": "DSA",
+              "topic": "SlidingWindows",
+              "path": "/DSA/SlidingWindows/substringanagrams.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/SlidingWindows/SubstringAnagrams.html",
+              "excerpt": "Given two strings, `s` and `t` , both consisting of lowercase English letters, return the number of substrings in `s` that are **anagrams of t**. An anagram is a word or phrase formed by rearranging the letters of another word or phrase, us",
+              "wordCount": 2462
+            }
+          ]
+        },
+        {
+          "title": "Sort And Search",
+          "items": [
+            {
+              "id": "DSA/Sort And Search/dutch-national-flag.md",
+              "title": "Dutch National Flag",
+              "course": "DSA",
+              "topic": "Sort And Search",
+              "path": "/DSA/Sort And Search/dutch-national-flag.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Sort And Search/Dutch National Flag.html",
+              "excerpt": "Given an array of 0s, 1s, and 2s representing red, white, and blue, respectively, sort the array in place so that it resembles the Dutch national flag, with all **reds** (0s) coming first, followed by **whites** (1s), and finally **blues** ",
+              "wordCount": 3547
+            },
+            {
+              "id": "DSA/Sort And Search/introduction-to-sort-and-search.md",
+              "title": "Introduction To Sort And Search",
+              "course": "DSA",
+              "topic": "Sort And Search",
+              "path": "/DSA/Sort And Search/introduction-to-sort-and-search.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Sort And Search/Introduction to Sort and Search.html",
+              "excerpt": "## Intuition When sorting and searching items in data structures, efficiency is key. This chapter covers common sorting methods and their roles in efficient searching. First, we present a comparison of the time and space complexities for va",
+              "wordCount": 472
+            },
+            {
+              "id": "DSA/Sort And Search/kth-largest-integer.md",
+              "title": "Intuition Min Heap",
+              "course": "DSA",
+              "topic": "Sort And Search",
+              "path": "/DSA/Sort And Search/kth-largest-integer.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Sort And Search/Kth Largest Integer.html",
+              "excerpt": "Return the **kth largest integer** in an array. #### Example: ```python Input: nums = [5, 2, 4, 3, 1, 6], k = 3 Output: 4 ``` #### Constraints: - The array contains no duplicates. - The array contains at least one element. - `1 \u2264 k \u2264 n`, wh",
+              "wordCount": 3260
+            },
+            {
+              "id": "DSA/Sort And Search/sort-array.md",
+              "title": "Sort Array",
+              "course": "DSA",
+              "topic": "Sort And Search",
+              "path": "/DSA/Sort And Search/sort-array.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Sort And Search/Sort Array.html",
+              "excerpt": "Given an integer array, **sort the array** in ascending order. #### Example: ```python Input: nums = [6, 8, 4, 2, 7, 3, 1, 5] Output: [1, 2, 3, 4, 5, 6, 7, 8] ``` ## Intuition This problem is quite open-ended because there are many sorting ",
+              "wordCount": 4045
+            },
+            {
+              "id": "DSA/Sort And Search/sort-linked-list.md",
+              "title": "Sort Linked List",
+              "course": "DSA",
+              "topic": "Sort And Search",
+              "path": "/DSA/Sort And Search/sort-linked-list.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Sort And Search/Sort Linked List.html",
+              "excerpt": "Given the head of a singly linked list, **sort the linked list** in ascending order. #### Example: ![Image represents two linear sequences of numbered nodes (3, 2, 4, 5, 1) and (1, 2, 3, 4, 5) connected by unidirectional arrows indicating a",
+              "wordCount": 3721
+            }
+          ]
+        },
+        {
+          "title": "Stacks",
+          "items": [
+            {
+              "id": "DSA/Stacks/evaluate-expression.md",
+              "title": "Evaluate Expression",
+              "course": "DSA",
+              "topic": "Stacks",
+              "path": "/DSA/Stacks/evaluate-expression.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Stacks/Evaluate Expression.html",
+              "excerpt": "Given a string representing a mathematical expression containing integers, parentheses, addition, and subtraction operators, evaluate and return the result of the expression. #### Example: ```python Input: s = '18-(7+(2-4))' Output: 13 ``` ",
+              "wordCount": 4412
+            },
+            {
+              "id": "DSA/Stacks/implement-a-queue-using-stacks.md",
+              "title": "Implement A Queue Using Stacks",
+              "course": "DSA",
+              "topic": "Stacks",
+              "path": "/DSA/Stacks/implement-a-queue-using-stacks.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Stacks/Implement a Queue using Stacks.html",
+              "excerpt": "Implement a **queue** using the stack data structure. Include the following functions: - `enqueue(x: int) -> None`: adds `x` to the end of the queue. - `dequeue() -> int`: removes and returns the element from the front of the queue. - `peek",
+              "wordCount": 3046
+            },
+            {
+              "id": "DSA/Stacks/introduction-to-stacks.md",
+              "title": "Introduction To Stacks",
+              "course": "DSA",
+              "topic": "Stacks",
+              "path": "/DSA/Stacks/introduction-to-stacks.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Stacks/Introduction to Stacks.html",
+              "excerpt": "## Intuition Imagine a stack of plates. You can only add a new plate to the top of the stack, and when you need a plate, you take the one from the top. It\u2019s not possible to take a plate from the bottom or middle without first removing all t",
+              "wordCount": 935
+            },
+            {
+              "id": "DSA/Stacks/maximums-of-sliding-window.md",
+              "title": "Maximums Of Sliding Window",
+              "course": "DSA",
+              "topic": "Stacks",
+              "path": "/DSA/Stacks/maximums-of-sliding-window.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Stacks/Maximums of Sliding Window.html",
+              "excerpt": "There's a sliding window of size `k` that slides through an integer array from left to right. Create a new array that records the **largest number found in each window** as it slides through. #### Example: ![Image represents a step-by-step ",
+              "wordCount": 3668
+            },
+            {
+              "id": "DSA/Stacks/next-largest-number-to-the-right.md",
+              "title": "Next Largest Number To The Right",
+              "course": "DSA",
+              "topic": "Stacks",
+              "path": "/DSA/Stacks/next-largest-number-to-the-right.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Stacks/Next Largest Number to the Right.html",
+              "excerpt": "Given an integer array `nums`, return an output array res where, for each value `nums[i]`, `res[i]` is the first number to the right that's larger than `nums[i]`. If no larger number exists to the right of `nums[i]`, set `res[i]` to \u20101. ###",
+              "wordCount": 2457
+            },
+            {
+              "id": "DSA/Stacks/repeated-removal-of-adjacent-duplicates.md",
+              "title": "Repeated Removal Of Adjacent Duplicates",
+              "course": "DSA",
+              "topic": "Stacks",
+              "path": "/DSA/Stacks/repeated-removal-of-adjacent-duplicates.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Stacks/Repeated Removal of Adjacent Duplicates.html",
+              "excerpt": "Given a string, continually perform the following operation: **remove a pair of adjacent duplicates** from the string. Continue performing this operation until the string no longer contains pairs of adjacent duplicates. Return the final str",
+              "wordCount": 1219
+            },
+            {
+              "id": "DSA/Stacks/valid-parenthesis-expression.md",
+              "title": "Valid Parenthesis Expression",
+              "course": "DSA",
+              "topic": "Stacks",
+              "path": "/DSA/Stacks/valid-parenthesis-expression.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Stacks/Valid Parenthesis Expression.html",
+              "excerpt": "Given a string representing an expression of parentheses containing the characters `'('`, `')'`, `'['`, `']'`, `'{'`, or `'}'`, determine if the expression forms a **valid sequence of parentheses**. A sequence of parentheses is valid if eve",
+              "wordCount": 2086
+            }
+          ]
+        },
+        {
+          "title": "Trees",
+          "items": [
+            {
+              "id": "DSA/Trees/balanced-binary-tree-validation.md",
+              "title": "Balanced Binary Tree Validation",
+              "course": "DSA",
+              "topic": "Trees",
+              "path": "/DSA/Trees/balanced-binary-tree-validation.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Trees/Balanced Binary Tree Validation.html",
+              "excerpt": "Determine if a binary tree is **height-balanced**, meaning no node's left subtree and right subtree have a height difference greater than 1. #### Example: ![Image represents a binary tree structure illustrating an imbalance condition. The m",
+              "wordCount": 1202
+            },
+            {
+              "id": "DSA/Trees/binary-search-tree-validation.md",
+              "title": "Binary Search Tree Validation",
+              "course": "DSA",
+              "topic": "Trees",
+              "path": "/DSA/Trees/binary-search-tree-validation.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Trees/Binary Search Tree Validation",
+              "excerpt": "Verify whether a binary tree is a **valid binary search tree** (BST). A BST is a binary tree where each node meets the following criteria: - A node's left subtree contains only nodes of lower values than the node's value. - A node's right s",
+              "wordCount": 2883
+            },
+            {
+              "id": "DSA/Trees/binary-tree-columns.md",
+              "title": "Binary Tree Columns",
+              "course": "DSA",
+              "topic": "Trees",
+              "path": "/DSA/Trees/binary-tree-columns.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Trees/Binary Tree Columns.html",
+              "excerpt": "Given the root of a binary tree, return a list of arrays where each array represents a **vertical column of the tree**. Nodes in the same column should be ordered from top to bottom. Nodes in the same row and column should be ordered from l",
+              "wordCount": 1870
+            },
+            {
+              "id": "DSA/Trees/binary-tree-symmetry.md",
+              "title": "Binary Tree Symmetry",
+              "course": "DSA",
+              "topic": "Trees",
+              "path": "/DSA/Trees/binary-tree-symmetry.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Trees/Binary Tree Symmetry.html",
+              "excerpt": "Determine if a binary tree is **vertically symmetric**. That is, the left subtree of the root node is a mirror of the right subtree. #### Example: ![Image represents a binary tree data structure. The tree is composed of nodes, represented b",
+              "wordCount": 1190
+            },
+            {
+              "id": "DSA/Trees/build-binary-tree-from-preorder-and-inorder-traversals.md",
+              "title": "Build Binary Tree From Preorder And Inorder Traversals",
+              "course": "DSA",
+              "topic": "Trees",
+              "path": "/DSA/Trees/build-binary-tree-from-preorder-and-inorder-traversals.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Trees/Build Binary Tree From Preorder and Inorder Traversals.html",
+              "excerpt": "Construct a binary tree using arrays of values obtained after a **preorder** traversal and an **inorder** traversal of the tree. #### Example: ![Image represents a binary tree data structure. The tree is rooted at node 5, which branches int",
+              "wordCount": 2725
+            },
+            {
+              "id": "DSA/Trees/invert-binary-tree.md",
+              "title": "Implementation Recursive",
+              "course": "DSA",
+              "topic": "Trees",
+              "path": "/DSA/Trees/invert-binary-tree.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Trees/Invert Binary Tree.html",
+              "excerpt": "**Invert** a binary tree and return its root. When a binary tree is inverted, it becomes the mirror image of itself. #### Example: ![Image represents a transformation of a binary tree. The left side shows a tree with a root node labeled '5'",
+              "wordCount": 2309
+            },
+            {
+              "id": "DSA/Trees/introduction-to-trees.md",
+              "title": "Introduction To Trees",
+              "course": "DSA",
+              "topic": "Trees",
+              "path": "/DSA/Trees/introduction-to-trees.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Trees/Introduction to Trees.html",
+              "excerpt": "## Intuition A tree is a hierarchical data structure composed of nodes, where each node connects to one or more child nodes. Each node in a tree contains the data it stores (`val`) and references to its child nodes. The most common type of ",
+              "wordCount": 1539
+            },
+            {
+              "id": "DSA/Trees/kth-smallest-number-in-a-binary-search-tree.md",
+              "title": "Intuition Recursive",
+              "course": "DSA",
+              "topic": "Trees",
+              "path": "/DSA/Trees/kth-smallest-number-in-a-binary-search-tree.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Trees/Kth Smallest Number in a Binary Search Tree",
+              "excerpt": "Given the root of a binary search tree (BST) and an integer `k`, find the **k th smallest node** value. #### Example: Given the BST below and k = 5: ![Image represents a binary tree data structure. The tree is rooted at node 5, which connec",
+              "wordCount": 1538
+            },
+            {
+              "id": "DSA/Trees/lowest-common-ancestor.md",
+              "title": "Lowest Common Ancestor",
+              "course": "DSA",
+              "topic": "Trees",
+              "path": "/DSA/Trees/lowest-common-ancestor.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Trees/Lowest Common Ancestor.html",
+              "excerpt": "Return the lowest common ancestor (LCA) of two nodes, `p` and `q`, in a binary tree. The LCA is defined as the **lowest node that has both p and q as descendants**. A node can be considered an ancestor of itself. #### Example: ![Image repre",
+              "wordCount": 1815
+            },
+            {
+              "id": "DSA/Trees/maximum-sum-of-a-continuous-path-in-a-binary-tree.md",
+              "title": "Maximum Sum Of A Continuous Path In A Binary Tree",
+              "course": "DSA",
+              "topic": "Trees",
+              "path": "/DSA/Trees/maximum-sum-of-a-continuous-path-in-a-binary-tree.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Trees/Maximum Sum of a Continuous Path in a Binary Tree.html",
+              "excerpt": "Return the **maximum sum of a continuous path** in a binary tree. A path is defined by the following characteristics: - Consists of a sequence of nodes that can begin and end at any node in the tree. - Each consecutive pair of nodes in the ",
+              "wordCount": 3267
+            },
+            {
+              "id": "DSA/Trees/rightmost-nodes-of-a-binary-tree.md",
+              "title": "Rightmost Nodes Of A Binary Tree",
+              "course": "DSA",
+              "topic": "Trees",
+              "path": "/DSA/Trees/rightmost-nodes-of-a-binary-tree.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Trees/Rightmost Nodes of a Binary Tree.html",
+              "excerpt": "Return an array containing the values of the rightmost nodes at each level of a binary tree. #### Example: ![Image represents a binary tree data structure where nodes are represented by circles containing numerical values. The root node, la",
+              "wordCount": 2270
+            },
+            {
+              "id": "DSA/Trees/serialize-and-deserialize-a-binary-tree.md",
+              "title": "Serialize And Deserialize A Binary Tree",
+              "course": "DSA",
+              "topic": "Trees",
+              "path": "/DSA/Trees/serialize-and-deserialize-a-binary-tree.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Trees/Serialize and Deserialize a Binary Tree.html",
+              "excerpt": "Write a function to **serialize** a binary tree into a string, and another function to **deserialize** that string back into the original binary tree structure. ![Image represents a serialization and deserialization process of a tree data s",
+              "wordCount": 2506
+            },
+            {
+              "id": "DSA/Trees/widest-binary-tree-level.md",
+              "title": "Widest Binary Tree Level",
+              "course": "DSA",
+              "topic": "Trees",
+              "path": "/DSA/Trees/widest-binary-tree-level.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Trees/Widest Binary Tree Level.html",
+              "excerpt": "Return the width of the **widest level** in a binary tree, where the width of a level is defined as the distance between its leftmost and rightmost non-null nodes. #### Example: ![Image represents a binary tree data structure. The root node",
+              "wordCount": 1392
+            }
+          ]
+        },
+        {
+          "title": "Tries",
+          "items": [
+            {
+              "id": "DSA/Tries/design-a-trie.md",
+              "title": "Design A Trie",
+              "course": "DSA",
+              "topic": "Tries",
+              "path": "/DSA/Tries/design-a-trie.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Tries/Design a Trie.html",
+              "excerpt": "Design and implement a **trie** data structure that supports the following operations: - `insert(word: str) -> None`: Inserts a word into the trie. - `search(word: str) -> bool`: Returns true if a word exists in the trie, and false if not. ",
+              "wordCount": 2296
+            },
+            {
+              "id": "DSA/Tries/find-all-words-on-a-board.md",
+              "title": "Find All Words On A Board",
+              "course": "DSA",
+              "topic": "Tries",
+              "path": "/DSA/Tries/find-all-words-on-a-board.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Tries/Find All Words on a Board",
+              "excerpt": "Given a 2D board of characters and an array of words, **find all the words in the array** that can be formed by tracing a path through adjacent cells in the board. Adjacent cells are those which horizontally or vertically neighbor each othe",
+              "wordCount": 4111
+            },
+            {
+              "id": "DSA/Tries/insert-and-search-words-with-wildcards.md",
+              "title": "Insert And Search Words With Wildcards",
+              "course": "DSA",
+              "topic": "Tries",
+              "path": "/DSA/Tries/insert-and-search-words-with-wildcards.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Tries/Insert and Search Words with Wildcards.html",
+              "excerpt": "Design and implement a data structure that supports the following operations: - `insert(word: str) -> None`: Inserts a word into the data structure. - `search(word: str) -> bool`: Returns true if a word exists in the data structure and fals",
+              "wordCount": 1635
+            },
+            {
+              "id": "DSA/Tries/introduction-to-tries.md",
+              "title": "Introduction To Tries",
+              "course": "DSA",
+              "topic": "Tries",
+              "path": "/DSA/Tries/introduction-to-tries.md",
+              "source": "/home/ayush/OOD-Design-Principles/DSA/Tries/Introduction to Tries.html",
+              "excerpt": "## Intuition Tries, also known as prefix trees, are specialized tree-like data structures that efficiently store strings by taking advantage of shared prefixes. To understand how a trie works, consider the string \"internet\". We can store th",
+              "wordCount": 1199
+            }
+          ]
+        }
+      ]
+    },
+    {
+  "title": "Machine Learning",
+  "topics": [
+    {
+      "title": "MachineLearning",
+      "items": [
+        {
+          "id": "Ad Click Prediction on Social Platforms.html",
+          "title": "Ad Click Prediction On Social Platforms",
+          "course": "Machine Learning",
+          "topic": "MachineLearning",
+          "path": "Ad Click Prediction on Social Platforms.html",
+          "type": "html"
+        },
+        {
+          "id": "Event Recommendation System.html",
+          "title": "Event Recommendation System",
+          "course": "Machine Learning",
+          "topic": "MachineLearning",
+          "path": "Event Recommendation System.html",
+          "type": "html"
+        },
+        {
+          "id": "Google Street View Blurring System.html",
+          "title": "Google Street View Blurring System",
+          "course": "Machine Learning",
+          "topic": "MachineLearning",
+          "path": "Google Street View Blurring System.html",
+          "type": "html"
+        },
+        {
+          "id": "Harmful Content Detection.html",
+          "title": "Harmful Content Detection",
+          "course": "Machine Learning",
+          "topic": "MachineLearning",
+          "path": "Harmful Content Detection.html",
+          "type": "html"
+        },
+        {
+          "id": "Introduction and Overview.html",
+          "title": "Introduction And Overview",
+          "course": "Machine Learning",
+          "topic": "MachineLearning",
+          "path": "Introduction and Overview.html",
+          "type": "html"
+        },
+        {
+          "id": "People You May Know.html",
+          "title": "People You May Know",
+          "course": "Machine Learning",
+          "topic": "MachineLearning",
+          "path": "People You May Know.html",
+          "type": "html"
+        },
+        {
+          "id": "Personalized News Feed.html",
+          "title": "Personalized News Feed",
+          "course": "Machine Learning",
+          "topic": "MachineLearning",
+          "path": "Personalized News Feed.html",
+          "type": "html"
+        },
+        {
+          "id": "Similar Listings on Vacation Rental Platforms.html",
+          "title": "Similar Listings On Vacation Rental Platforms",
+          "course": "Machine Learning",
+          "topic": "MachineLearning",
+          "path": "Similar Listings on Vacation Rental Platforms.html",
+          "type": "html"
+        },
+        {
+          "id": "Video Recommendation System.html",
+          "title": "Video Recommendation System",
+          "course": "Machine Learning",
+          "topic": "MachineLearning",
+          "path": "Video Recommendation System.html",
+          "type": "html"
+        },
+        {
+          "id": "Visual Search System.html",
+          "title": "Visual Search System",
+          "course": "Machine Learning",
+          "topic": "MachineLearning",
+          "path": "Visual Search System.html",
+          "type": "html"
+        },
+        {
+          "id": "YouTube Video Search.html",
+          "title": "YouTube Video Search",
+          "course": "Machine Learning",
+          "topic": "MachineLearning",
+          "path": "YouTube Video Search.html",
+          "type": "html"
+        }
+      ]
+    }
+  ]
+},
+    {
+      "title": "OOD",
+      "topics": [
+        {
+          "title": "OOD",
+          "items": [
+            {
+              "id": "OOD/OOD/framework-ood.md",
+              "title": "Different Types Of OOD Interviews",
+              "course": "OOD",
+              "topic": "OOD",
+              "path": "/OOD/OOD/framework-ood.md",
+              "source": "/home/ayush/OOD-Design-Principles/Framework_OOD___Technical_Interview_Prep.html",
+              "excerpt": "Having a clear framework for the OOD interview is more important than many realize. Without structure, the interview can feel disorganized and difficult for you and the interviewer to follow. This chapter introduces a four-step framework to",
+              "wordCount": 3594
+            },
+            {
+              "id": "OOD/OOD/what-is-ood.md",
+              "title": "How Is This Book Structured?",
+              "course": "OOD",
+              "topic": "OOD",
+              "path": "/OOD/OOD/what-is-ood.md",
+              "source": "/home/ayush/OOD-Design-Principles/What_is_OOD___Technical_Interview_Prep.html",
+              "excerpt": "Object-oriented design interviews have become increasingly popular in technical hiring. This shift reflects companies\u2019 growing emphasis on skills that align with real-world software development. OOD interviews are important at companies lik",
+              "wordCount": 1169
+            },
+            {
+              "id": "OOD/OOD/requirements.md",
+              "title": "Requirements",
+              "course": "OOD",
+              "topic": "OOD",
+              "path": "/OOD/OOD/requirements.md",
+              "source": "/home/ayush/OOD-Design-Principles/requirements.txt",
+              "excerpt": "beautifulsoup4 fastapi uvicorn pillow PyMuPDF pytesseract",
+              "wordCount": 6
+            },
+            {
+              "id": "OOD/OOD/atm.md",
+              "title": "atm-problem",
+              "course": "OOD",
+              "topic": "OOD",
+              "path": "/OOD/OOD/atm.md",
+              "source": "/home/ayush/OOD-Design-Principles/ATM___Technical_Interview_Prep.html",
+              "excerpt": "In this chapter, we will explore the object-oriented design of an ATM system. The primary purpose of an ATM is to automate banking tasks for users, allowing them to check balances, withdraw cash, and transfer funds. This design aims to make",
+              "wordCount": 5934
+            },
+            {
+              "id": "OOD/OOD/grocery-store-problem.md",
+              "title": "Grocery Store Problem",
+              "course": "OOD",
+              "topic": "OOD",
+              "path": "/OOD/OOD/grocery-store-problem.md",
+              "source": "/home/ayush/OOD-Design-Principles/Grocery_Store-problemTechnical_Interview_Prep.html",
+              "excerpt": "In this chapter, we will explore the design of a grocery store system. This system is tailored for grocery store workers to streamline operations like managing the item catalog, configuring pricing, and applying discounts. ![Image represent",
+              "wordCount": 6474
+            },
+            {
+              "id": "OOD/OOD/parking.md",
+              "title": "Parking Lot Problem",
+              "course": "OOD",
+              "topic": "OOD",
+              "path": "/OOD/OOD/parking.md",
+              "source": "/home/ayush/OOD-Design-Principles/Parking___Technical_Interview_Prep.html",
+              "excerpt": "In this chapter, we explore the object-oriented design of a Parking Lot system, one of the most popular questions in technical interviews. This parking lot application aims to provide a comprehensive solution for efficiently managing a park",
+              "wordCount": 6591
+            },
+            {
+              "id": "OOD/OOD/shipping-locker-system.md",
+              "title": "Shipping Locker System",
+              "course": "OOD",
+              "topic": "OOD",
+              "path": "/OOD/OOD/shipping-locker-system.md",
+              "source": "/home/ayush/OOD-Design-Principles/Shipping Locker System.html",
+              "excerpt": "In this chapter, we will design a Shipping Locker system similar to UPS, FedEx, or Amazon Locker. It offers customers a convenient and secure way to pick up their online orders. The system manages locker availability, assigns incoming packa",
+              "wordCount": 6050
+            },
+            {
+              "id": "OOD/OOD/black-jack-problem.md",
+              "title": "Blackjack Problem",
+              "course": "OOD",
+              "topic": "OOD",
+              "path": "/OOD/OOD/black-jack-problem.md",
+              "source": "/home/ayush/OOD-Design-Principles/Black-Jack-problemTechnical_Interview_Prep.html",
+              "excerpt": "In this chapter, we will discuss the object-oriented design of the Blackjack game (also called \u201c21\u201d). Blackjack is a popular card game where the goal is to get a hand of cards that adds up to 21, or as close as possible, without going over.",
+              "wordCount": 6682
+            },
+            {
+              "id": "OOD/OOD/movie-ticket.md",
+              "title": "Movie Ticket Booking System",
+              "course": "OOD",
+              "topic": "OOD",
+              "path": "/OOD/OOD/movie-ticket.md",
+              "source": "/home/ayush/OOD-Design-Principles/movie-ticket.html",
+              "course": "OOD",
+              "topic": "OOD",
+              "path": "/OOD/OOD/movie-ticket.md",
+              "source": "/home/ayush/OOD-Design-Principles/movie-ticket.html",
+              "excerpt": "In this chapter, we\u2019ll walk through the design of a Movie Ticket Booking System. It\u2019s used to assess your ability to model real-world systems and apply object-oriented principles to create a well-structured solution. The goal is to carefull",
+              "wordCount": 6477
+            },
+            {
+              "id": "OOD/OOD/restraunt.md",
+              "title": "Restaurant Management System",
+              "course": "OOD",
+              "topic": "OOD",
+              "path": "/OOD/OOD/restraunt.md",
+              "source": "/home/ayush/OOD-Design-Principles/Restraunt___Technical_Interview_Prep.html",
+              "excerpt": "In this chapter, we will explore the design of a Restaurant Management System. The goal is to create classes that represent the system\u2019s essential components, such as menus, reservations, and tables. We will develop a system that supports c",
+              "wordCount": 5368
+            },
+            {
+              "id": "OOD/OOD/unix-design.md",
+              "title": "Unix Design",
+              "course": "OOD",
+              "topic": "OOD",
+              "path": "/OOD/OOD/unix-design.md",
+              "source": "/home/ayush/OOD-Design-Principles/Unix-DesignTechnical_Interview_Prep.html",
+              "excerpt": "In this chapter, we will explore the design of a Unix File Search system. The goal is to design classes that represent abstractions of the key entities in a file search system, such as directories, files, and filter criteria. We\u2019ll aim to c",
+              "wordCount": 6317
+            },
+            {
+              "id": "OOD/OOD/tic-tac-toe-problem.md",
+              "title": "Tic Tac Toe Problem",
+              "course": "OOD",
+              "topic": "OOD",
+              "path": "/OOD/OOD/tic-tac-toe-problem.md",
+              "source": "/home/ayush/OOD-Design-Principles/Tic_Tac_Toe-problemTechnical_Interview_Prep.html",
+              "excerpt": "In this chapter, we will explore the object-oriented design of a Tic-Tac-Toe game. We aim to create an interactive platform where two players alternate turns, placing their symbols on a virtual board. We\u2019ll design key components such as the",
+              "wordCount": 5119
+            },
+            {
+              "id": "OOD/OOD/vendingmachine.md",
+              "title": "Vending Machine Problem",
+              "course": "OOD",
+              "topic": "OOD",
+              "path": "/OOD/OOD/vendingmachine.md",
+              "source": "/home/ayush/OOD-Design-Principles/VendingMachine___Technical_Interview_Prep.html",
+              "excerpt": "In this chapter, we will explore the design of a vending machine system that allows users to select and purchase products, dispense items, manage inventory, and process payments. Although real-world vending machines involve hardware compone",
+              "wordCount": 5345
+            },
+            {
+              "id": "OOD/OOD/ood-fundamentals.md",
+              "title": "Why Learn OOP?",
+              "course": "OOD",
+              "topic": "OOD",
+              "path": "/OOD/OOD/ood-fundamentals.md",
+              "source": "/home/ayush/OOD-Design-Principles/OOD-fundamentals___Technical_Interview_Prep.html",
+              "excerpt": "This chapter introduces OOP, a popular programming paradigm that organizes code and data into objects. These objects interact to perform tasks and model real-world entities, providing a structured approach to building flexible, maintainable",
+              "wordCount": 6429
+            }
+          ]
+        }
+      ]
+    },
+    {
+  "title": "System Design",
+  "topics": [
+    {
+      "title": "SystemDesignInterview",
+      "items": [
+        {
+          "id": "A Framework For System Design Interviews.html",
+          "title": "A Framework For System Design Interviews",
+          "course": "System Design",
+          "topic": "SystemDesignInterview",
+          "path": "A Framework For System Design Interviews.html",
+          "type": "html"
+        },
+        {
+          "id": "Back-of-the-envelope Estimation.html",
+          "title": "Back Of The Envelope Estimation",
+          "course": "System Design",
+          "topic": "SystemDesignInterview",
+          "path": "Back-of-the-envelope Estimation.html",
+          "type": "html"
+        },
+        {
+          "id": "Foreword.html",
+          "title": "Foreword",
+          "course": "System Design",
+          "topic": "SystemDesignInterview",
+          "path": "Foreword.html",
+          "type": "html"
+        }
+      ]
+    }
+  ]
+}
+  ]
+}

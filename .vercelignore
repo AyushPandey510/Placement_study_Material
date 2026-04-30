@@ -1,0 +1,15 @@
+raw_material/
+DSA/
+MachineLearning/
+SystemDesignInterview/
+/*.html
+.git/
+.sixth/
+node_modules/
+placement_prep/frontend/node_modules/
+placement_prep/frontend/dist/
+placement_prep/frontend/.env.local
+placement_prep/logs/
+placement_prep/data/processed_state.json
+__pycache__/
+*.pyc
