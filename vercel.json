@@ -13,8 +13,8 @@
       "dest": "/api/index.py"
     },
     {
-      "src": "^/assets/(.*)",
-      "dest": "/api/index.py"
+      "src": ".*\\.(js|css|png|jpg|jpeg|svg|ico|webp)$",
+      "dest": "/$0"
     },
     {
       "src": ".*",
