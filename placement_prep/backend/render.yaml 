@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: placement-prep-api
+    runtime: python
+    rootDir: placement_prep/backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn api:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: ROOT_DIR
+        value: /opt/render/project/src
+      - key: PYTHON_VERSION
+        value: 3.12.0

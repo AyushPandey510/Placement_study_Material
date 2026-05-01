@@ -44,6 +44,6 @@ LOG_ROOT     = ROOT / "placement_prep" / "logs"
 # that don't exist in the deployment image, so we skip creation when the
 # deploy flag is set.
 #
-if not os.environ.get("VERCEL"):
+if not os.environ.get("VERCEL") and not os.environ.get("RENDER"):
     for _d in (COURSES_ROOT, ASSETS_ROOT, IMAGE_ROOT, DATA_ROOT, LOG_ROOT):
         _d.mkdir(parents=True, exist_ok=True)
