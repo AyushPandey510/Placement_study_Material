@@ -1,26 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "npm install --prefix placement_prep/frontend && npm run build --prefix placement_prep/frontend",
-  "outputDirectory": "placement_prep/frontend/dist",
-
-  "functions": {
-    "api/index.py": {
-      "includeFiles": "courses/** assets/** placement_prep/data/**"
-    }
-  },
-
-  "routes": [
-    {
-      "src": "^/api/(.*)",
-      "dest": "/api/index.py"
-    },
-    {
-      "src": ".*\\.(js|css|png|jpg|jpeg|svg|ico|webp)$",
-      "dest": "/$0"
-    },
-    {
-      "src": ".*",
-      "dest": "/index.html"
-    }
-  ]
+  "framework": "vite",
+  "buildCommand": "npm install && npm run build",
+  "outputDirectory": "dist"
 }
