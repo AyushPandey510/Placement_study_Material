@@ -1,4 +1,10 @@
-import React, { useCallback, useEffect, useMemo, useReducer, useRef, useState } from "react";
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { createRoot } from "react-dom/client";
 import { motion } from "framer-motion";
 import {
@@ -23,13 +29,14 @@ import {
   Settings2,
 } from "lucide-react";
 import "./styles.css";
+import ChatWidget from "./components/ChatWidget";
+import SelectionPopup from "./components/SelectionPopup";
 
 const API = import.meta.env.VITE_API_URL ?? "";
 
-// ─────────────────────────────────────────────
-// FIX 5: Storage abstraction with in-memory fallback
-// Silently falls back when localStorage is unavailable (sandboxed iframes, etc.)
-// ─────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────────────────────
+// Storage abstraction with in-memory fallback
+// ─────────────────────────────────────────────────────────────────────────────
 const memoryStore = {};
 
 const storage = {
@@ -65,9 +72,9 @@ function useStoredState(key, initialValue) {
   return [value, setAndPersist];
 }
 
-// ─────────────────────────────────────────────
-// FIX 16 + 17: Build a fast id→item Map with useMemo
-// ─────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────────────────────
+// Build a fast id→item Map
+// ─────────────────────────────────────────────────────────────────────────────
 function useFlatItems(index) {
   return useMemo(() => {
     const items = flatten(index);
@@ -76,9 +83,9 @@ function useFlatItems(index) {
   }, [index]);
 }
 
-// ─────────────────────────────────────────────
-// FIX 17: Error Boundary
-// ─────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────────────────────
+// Error Boundary
+// ─────────────────────────────────────────────────────────────────────────────
 class ErrorBoundary extends React.Component {
   constructor(props) {
     super(props);
@@ -94,7 +101,9 @@ class ErrorBoundary extends React.Component {
           <AlertCircle size={32} />
           <h2>Something went wrong rendering this lesson</h2>
           <p>{String(this.state.error.message)}</p>
-          <button onClick={() => this.setState({ error: null })}>Try again</button>
+          <button onClick={() => this.setState({ error: null })}>
+            Try again
+          </button>
         </div>
       );
     }
@@ -102,14 +111,14 @@ class ErrorBoundary extends React.Component {
   }
 }
 
-// ─────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────────────────────
 // App
-// ─────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────────────────────
 function App() {
   const [index, setIndex] = useState({ courses: [] });
   const [selected, setSelected] = useStoredState("pp:selected", "");
   const [content, setContent] = useState(null);
-  const [loading, setLoading] = useState(false);        // FIX 13: loading state
+  const [loading, setLoading] = useState(false);
   const [fetchError, setFetchError] = useState(null);
   const [query, setQuery] = useState("");
   const [bookmarks, setBookmarks] = useStoredState("pp:bookmarks", []);
@@ -118,11 +127,28 @@ function App() {
   const [highlights, setHighlights] = useStoredState("pp:highlights", {});
   const [recent, setRecent] = useStoredState("pp:recent", []);
   const [light, setLight] = useStoredState("pp:light", false);
-  // Focus Mode: focusModeEnabled = feature is on (button visible)
-  // focusActive = user has triggered the full-screen notes view
-  const [focusModeEnabled, setFocusModeEnabled] = useStoredState("pp:focusEnabled", true);
+  const [focusModeEnabled, setFocusModeEnabled] = useStoredState(
+    "pp:focusEnabled",
+    true
+  );
   const [focusActive, setFocusActive] = useState(false);
 
+  // ── ChatWidget controlled state ──────────────────────────────────────────
+  // The SelectionPopup fires a "open-chat-with" event; we catch it here and
+  // push a pre-filled question into ChatWidget via props.
+  const [chatOpen, setChatOpen] = useState(false);
+  const [chatPrefill, setChatPrefill] = useState("");
+
+  useEffect(() => {
+    const handler = (e) => {
+      setChatPrefill(e.detail?.question ?? "");
+      setChatOpen(true);
+    };
+    window.addEventListener("open-chat-with", handler);
+    return () => window.removeEventListener("open-chat-with", handler);
+  }, []);
+
+  // ── Load course index ────────────────────────────────────────────────────
   useEffect(() => {
     fetch(`${API}/api/courses`)
       .then((r) => r.json())
@@ -130,6 +156,7 @@ function App() {
       .catch(() => setIndex({ courses: [] }));
   }, []);
 
+  // ── Load lesson content ──────────────────────────────────────────────────
   useEffect(() => {
     if (!selected) {
       setContent(null);
@@ -166,14 +193,12 @@ function App() {
 
   const { items: flatItems, map: itemMap } = useFlatItems(index);
 
-  // FIX 19: Only compute filtered list when query is non-empty
   const filtered = useMemo(() => {
     if (!query) return [];
     const q = query.toLowerCase();
     return flatItems.filter((item) => {
-      // FIX 6: search body text too (excerpt is already a body slice at index time,
-      // but if the API gives us full body we use it)
-      const haystack = `${item.title} ${item.course} ${item.topic} ${item.excerpt || ""} ${item.body || ""}`.toLowerCase();
+      const haystack =
+        `${item.title} ${item.course} ${item.topic} ${item.excerpt || ""} ${item.body || ""}`.toLowerCase();
       return haystack.includes(q);
     });
   }, [query, flatItems]);
@@ -184,10 +209,12 @@ function App() {
 
   const currentItem = itemMap.get(selected);
 
+  // Derive current course name for ChatWidget / SelectionPopup
+  const currentCourseName = currentItem?.course ?? "";
+
   const toggle = (list, setList, id) =>
     setList(list.includes(id) ? list.filter((x) => x !== id) : [...list, id]);
 
-  // FIX 21: notes export
   const exportNotes = () => {
     const lines = Object.entries(notes)
       .map(([id, note]) => {
@@ -206,15 +233,16 @@ function App() {
 
   // Close focus mode on Escape
   useEffect(() => {
-    const handler = (e) => { if (e.key === "Escape" && focusActive) setFocusActive(false); };
+    const handler = (e) => {
+      if (e.key === "Escape" && focusActive) setFocusActive(false);
+    };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
   }, [focusActive]);
 
-  // FIX 17: wrap entire app in ErrorBoundary
   return (
     <ErrorBoundary>
-      {/* Focus Mode overlay — renders above everything else */}
+      {/* Focus Mode overlay */}
       {focusActive && (
         <ZenNotesOverlay
           note={notes[selected] || ""}
@@ -224,7 +252,12 @@ function App() {
           onExport={exportNotes}
         />
       )}
-      <div className={`app${light ? " light" : ""}${focusActive ? " focus-mode-active" : ""}`}>
+
+      <div
+        className={`app${light ? " light" : ""}${
+          focusActive ? " focus-mode-active" : ""
+        }`}
+      >
         <aside className="sidebar">
           <div className="brand">
             <GraduationCap size={26} />
@@ -247,7 +280,6 @@ function App() {
             >
               <Home size={18} /> Dashboard
             </button>
-            {/* FIX 15: keyboard navigation via aria + onKeyDown */}
             <CourseTree
               index={index}
               selected={selected}
@@ -269,18 +301,25 @@ function App() {
               />
             </div>
             <div style={{ display: "flex", gap: 8 }}>
-              {/* Focus mode toggle button — only shown when enabled in settings */}
-              {focusModeEnabled && selected && content && content.type !== "html" && (
-                <button
-                  className={`iconButton focusModeBtn${focusActive ? " focusActive" : ""}`}
-                  onClick={() => setFocusActive((v) => !v)}
-                  title={focusActive ? "Exit focus mode (Esc)" : "Focus mode — notes only"}
-                  aria-pressed={focusActive}
-                >
-                  <Focus size={18} />
-                </button>
-              )}
-              {/* FIX 21: export notes button if any notes exist */}
+              {focusModeEnabled &&
+                selected &&
+                content &&
+                content.type !== "html" && (
+                  <button
+                    className={`iconButton focusModeBtn${
+                      focusActive ? " focusActive" : ""
+                    }`}
+                    onClick={() => setFocusActive((v) => !v)}
+                    title={
+                      focusActive
+                        ? "Exit focus mode (Esc)"
+                        : "Focus mode — notes only"
+                    }
+                    aria-pressed={focusActive}
+                  >
+                    <Focus size={18} />
+                  </button>
+                )}
               {Object.keys(notes).some((k) => notes[k]) && (
                 <button
                   className="iconButton"
@@ -290,16 +329,23 @@ function App() {
                   <Download size={18} />
                 </button>
               )}
-              {/* Enable/disable focus mode feature */}
               <button
-                className={`iconButton${focusModeEnabled ? " settingsActive" : ""}`}
-                onClick={() => { setFocusModeEnabled((v) => !v); setFocusActive(false); }}
-                title={focusModeEnabled ? "Disable focus mode feature" : "Enable focus mode feature"}
+                className={`iconButton${
+                  focusModeEnabled ? " settingsActive" : ""
+                }`}
+                onClick={() => {
+                  setFocusModeEnabled((v) => !v);
+                  setFocusActive(false);
+                }}
+                title={
+                  focusModeEnabled
+                    ? "Disable focus mode feature"
+                    : "Enable focus mode feature"
+                }
                 aria-pressed={focusModeEnabled}
               >
                 <Settings2 size={18} />
               </button>
-              {/* FIX 11: swap Moon ↔ Sun based on theme */}
               <button
                 className="iconButton"
                 onClick={() => setLight(!light)}
@@ -311,9 +357,14 @@ function App() {
           </header>
 
           {query ? (
-            <SearchView results={filtered} onSelect={(id) => { setQuery(""); setSelected(id); }} />
+            <SearchView
+              results={filtered}
+              onSelect={(id) => {
+                setQuery("");
+                setSelected(id);
+              }}
+            />
           ) : loading ? (
-            // FIX 13: proper loading skeleton
             <div className="loadingState">
               <div className="loadingSkeleton" />
               <div className="loadingSkeleton short" />
@@ -329,7 +380,6 @@ function App() {
             </div>
           ) : selected && content ? (
             content.type === "html" ? (
-              // FIX 5b: validate path doesn't escape — only serve known .html ids
               <iframe
                 src={`${API}/api/html/${encodeURIComponent(content.path)}`}
                 sandbox="allow-scripts allow-same-origin"
@@ -342,7 +392,6 @@ function App() {
                 title="Lesson content"
               />
             ) : (
-              // FIX 17: wrap ContentView in its own ErrorBoundary
               <ErrorBoundary>
                 <ContentView
                   content={content}
@@ -374,18 +423,32 @@ function App() {
           )}
         </main>
       </div>
+
+      {/* ── Global overlays — rendered outside .app so z-index is clean ── */}
+
+      {/* SelectionPopup: shows "Explain this" bubble when user selects text */}
+      <SelectionPopup currentCourse={currentCourseName} />
+
+      {/* ChatWidget: floating chat button + panel */}
+      <ChatWidget
+        currentCourse={currentCourseName}
+        open={chatOpen}
+        prefill={chatPrefill}
+        onOpenChange={(v) => {
+          setChatOpen(v);
+          if (!v) setChatPrefill(""); // clear prefill when closed
+        }}
+      />
     </ErrorBoundary>
   );
 }
 
-// ─────────────────────────────────────────────
-// ZenNotesOverlay — Focus Mode full-screen notes panel
-// Renders above the entire app via portal-like absolute positioning
-// ─────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────────────────────
+// ZenNotesOverlay
+// ─────────────────────────────────────────────────────────────────────────────
 function ZenNotesOverlay({ note, title, onNote, onClose, onExport }) {
   const textareaRef = useRef(null);
 
-  // Auto-focus textarea when overlay opens
   useEffect(() => {
     textareaRef.current?.focus();
   }, []);
@@ -394,20 +457,31 @@ function ZenNotesOverlay({ note, title, onNote, onClose, onExport }) {
   const charCount = note.length;
 
   return (
-    <div className="zenOverlay" role="dialog" aria-modal="true" aria-label="Focus mode — notes">
+    <div
+      className="zenOverlay"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Focus mode — notes"
+    >
       <div className="zenHeader">
         <div className="zenTitle">
           <StickyNote size={16} />
           <span>Notes — {title}</span>
         </div>
         <div className="zenMeta">
-          <span>{wordCount} words · {charCount} chars</span>
+          <span>
+            {wordCount} words · {charCount} chars
+          </span>
           {note.trim() && (
             <button className="zenBtn" onClick={onExport} title="Export all notes">
               <Download size={15} /> Export
             </button>
           )}
-          <button className="zenBtn zenClose" onClick={onClose} title="Exit focus mode (Esc)">
+          <button
+            className="zenBtn zenClose"
+            onClick={onClose}
+            title="Exit focus mode (Esc)"
+          >
             <X size={16} /> Exit focus
           </button>
         </div>
@@ -426,9 +500,9 @@ function ZenNotesOverlay({ note, title, onNote, onClose, onExport }) {
   );
 }
 
-// ─────────────────────────────────────────────
-// FIX 7 + 15: CourseTree with proper aria keyboard navigation
-// ─────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────────────────────
+// CourseTree
+// ─────────────────────────────────────────────────────────────────────────────
 function CourseTree({ index, selected, completed, onSelect }) {
   const [open, setOpen] = useStoredState("pp:openTopics", {});
 
@@ -455,10 +529,7 @@ function CourseTree({ index, selected, completed, onSelect }) {
                   aria-expanded={isOpen}
                   aria-controls={`topic-${key}`}
                 >
-                  <ChevronDown
-                    size={16}
-                    className={isOpen ? "" : "closed"}
-                  />
+                  <ChevronDown size={16} className={isOpen ? "" : "closed"} />
                   {topic.title}
                 </button>
                 {isOpen && (
@@ -493,17 +564,12 @@ function CourseTree({ index, selected, completed, onSelect }) {
   );
 }
 
-// ─────────────────────────────────────────────
-// FIX 7b: Dashboard — course cards show topic count not just first item
-// FIX 16: use itemMap for O(1) lookup in shelves
-// ─────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────────────────────
+// Dashboard
+// ─────────────────────────────────────────────────────────────────────────────
 function Dashboard({ index, recent, bookmarks, itemMap, flatItems, onSelect }) {
-  const recentItems = recent
-    .map((id) => itemMap.get(id))
-    .filter(Boolean);
-  const bookmarkedItems = bookmarks
-    .map((id) => itemMap.get(id))
-    .filter(Boolean);
+  const recentItems = recent.map((id) => itemMap.get(id)).filter(Boolean);
+  const bookmarkedItems = bookmarks.map((id) => itemMap.get(id)).filter(Boolean);
 
   return (
     <div className="dashboard">
@@ -519,8 +585,6 @@ function Dashboard({ index, recent, bookmarks, itemMap, flatItems, onSelect }) {
       </div>
       <div className="courseGrid">
         {index.courses.map((course, i) => {
-          // FIX 7: clicking a course card shows first topic/item but also
-          // handles missing items gracefully with a visible warning
           const firstId = course.topics[0]?.items[0]?.id;
           const totalLessons = course.topics.reduce(
             (sum, t) => sum + t.items.length,
@@ -580,7 +644,20 @@ function Shelf({ title, icon, items, onSelect }) {
 function SearchView({ results, onSelect }) {
   return (
     <div className="searchResults">
-      <h1>Search results {results.length === 0 && <span style={{fontSize:"1rem",fontWeight:400,color:"var(--muted)"}}>— no matches found</span>}</h1>
+      <h1>
+        Search results{" "}
+        {results.length === 0 && (
+          <span
+            style={{
+              fontSize: "1rem",
+              fontWeight: 400,
+              color: "var(--muted)",
+            }}
+          >
+            — no matches found
+          </span>
+        )}
+      </h1>
       <div className="resultGrid">
         {results.map((item) => (
           <ResultCard key={item.id} item={item} onSelect={onSelect} />
@@ -602,12 +679,9 @@ function ResultCard({ item, onSelect }) {
   );
 }
 
-// ─────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────────────────────
 // ContentView
-// FIX 1: highlights re-applied from stored state on mount / change
-// FIX 14: smooth scroll for TOC links
-// FIX 21: notes export handled at App level
-// ─────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────────────────────
 function ContentView({
   content,
   item,
@@ -624,18 +698,13 @@ function ContentView({
     return <div style={{ padding: "20px" }}>Loading content…</div>;
   }
 
-  // FIX 12: memoize both TOC and rendered markdown so they don't recompute
-  // on every unrelated state change (bookmark toggle, note typing, etc.)
   const toc = useMemo(() => buildToc(content.body), [content.body]);
 
-  // FIX 1: highlighted is passed in from stored state so it's always applied
-  // (even after reload) — renderMarkdown uses it as a dependency
   const renderedBody = useMemo(
     () => renderMarkdown(content.body, highlighted, API),
     [content.body, highlighted]
   );
 
-  // FIX 14: smooth scroll for TOC
   const handleTocClick = (e, id) => {
     e.preventDefault();
     const el = document.getElementById(id);
@@ -701,14 +770,9 @@ function ContentView({
   );
 }
 
-// ─────────────────────────────────────────────
-// renderMarkdown — fixed version
-// FIX 1:  highlight is a param so memoization works (no stale closure)
-// FIX 2:  image src resolved relative to API + content base path
-// FIX 3:  ordered lists parsed
-// FIX 4:  blockquotes, HR, and GFM-style tables handled gracefully
-// FIX 12: wrapped in useMemo at call site — function itself is pure
-// ─────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────────────────────
+// renderMarkdown
+// ─────────────────────────────────────────────────────────────────────────────
 function renderMarkdown(markdown, highlight, apiBase = "") {
   const safeMarkdown = markdown || "";
   const lines = safeMarkdown.split("\n");
@@ -718,7 +782,6 @@ function renderMarkdown(markdown, highlight, apiBase = "") {
   while (i < lines.length) {
     const line = lines[i] ?? "";
 
-    // ── Fenced code block ────────────────────
     if (line.startsWith("```")) {
       const language = line.slice(3).trim();
       const code = [];
@@ -736,12 +799,10 @@ function renderMarkdown(markdown, highlight, apiBase = "") {
       continue;
     }
 
-    // ── ATX Heading ──────────────────────────
     if (/^#{1,6}\s/.test(line)) {
       const hashes = line.match(/^#+/)?.[0]?.length ?? 1;
       const text = line.replace(/^#+\s/, "");
       const id = slug(text);
-      // map h1→h2, h2→h2, h3→h3, h4+→h4 so we don't nest h1 inside content
       const level = Math.min(4, Math.max(2, hashes + 1));
       const Tag = `h${level}`;
       nodes.push(
@@ -753,17 +814,18 @@ function renderMarkdown(markdown, highlight, apiBase = "") {
       continue;
     }
 
-    // ── Horizontal rule ──────────────────────
     if (/^(-{3,}|\*{3,}|_{3,})$/.test(line.trim())) {
       nodes.push(<hr key={i} />);
       i += 1;
       continue;
     }
 
-    // ── Blockquote ───────────────────────────  FIX 4
     if (line.startsWith("> ") || line === ">") {
       const quoteLines = [];
-      while (i < lines.length && (lines[i].startsWith("> ") || lines[i] === ">")) {
+      while (
+        i < lines.length &&
+        (lines[i].startsWith("> ") || lines[i] === ">")
+      ) {
         quoteLines.push((lines[i] ?? "").replace(/^>\s?/, ""));
         i++;
       }
@@ -777,10 +839,16 @@ function renderMarkdown(markdown, highlight, apiBase = "") {
       continue;
     }
 
-    // ── GFM table ────────────────────────────  FIX 4
-    if (/^\|.+\|/.test(line) && i + 1 < lines.length && /^\|[-| :]+\|/.test(lines[i + 1] ?? "")) {
-      const headers = line.split("|").filter((_, idx, arr) => idx !== 0 && idx !== arr.length - 1).map((h) => h.trim());
-      i += 2; // skip header + separator
+    if (
+      /^\|.+\|/.test(line) &&
+      i + 1 < lines.length &&
+      /^\|[-| :]+\|/.test(lines[i + 1] ?? "")
+    ) {
+      const headers = line
+        .split("|")
+        .filter((_, idx, arr) => idx !== 0 && idx !== arr.length - 1)
+        .map((h) => h.trim());
+      i += 2;
       const rows = [];
       while (i < lines.length && /^\|.+\|/.test(lines[i] ?? "")) {
         const cells = (lines[i] ?? "")
@@ -794,12 +862,18 @@ function renderMarkdown(markdown, highlight, apiBase = "") {
         <div key={i} className="tableWrapper">
           <table>
             <thead>
-              <tr>{headers.map((h, hi) => <th key={hi}>{mark(h, highlight)}</th>)}</tr>
+              <tr>
+                {headers.map((h, hi) => (
+                  <th key={hi}>{mark(h, highlight)}</th>
+                ))}
+              </tr>
             </thead>
             <tbody>
               {rows.map((row, ri) => (
                 <tr key={ri}>
-                  {row.map((cell, ci) => <td key={ci}>{mark(cell, highlight)}</td>)}
+                  {row.map((cell, ci) => (
+                    <td key={ci}>{mark(cell, highlight)}</td>
+                  ))}
                 </tr>
               ))}
             </tbody>
@@ -809,12 +883,10 @@ function renderMarkdown(markdown, highlight, apiBase = "") {
       continue;
     }
 
-    // ── Image ────────────────────────────────  FIX 2
     if (/^!\[.*\]\(.+\)/.test(line)) {
       const match = line.match(/^!\[(.*)\]\((.+)\)/);
       if (match) {
         const [, alt, src] = match;
-        // Resolve: absolute URLs pass through, relative paths prepend apiBase
         const resolvedSrc = /^https?:\/\//.test(src)
           ? src
           : src.startsWith("/")
@@ -837,7 +909,6 @@ function renderMarkdown(markdown, highlight, apiBase = "") {
       continue;
     }
 
-    // ── Unordered list ───────────────────────
     if (/^[-*]\s/.test(line)) {
       const items = [];
       while (i < lines.length && /^[-*]\s/.test(lines[i] ?? "")) {
@@ -854,7 +925,6 @@ function renderMarkdown(markdown, highlight, apiBase = "") {
       continue;
     }
 
-    // ── Ordered list ─────────────────────────  FIX 3
     if (/^\d+\.\s/.test(line)) {
       const items = [];
       while (i < lines.length && /^\d+\.\s/.test(lines[i] ?? "")) {
@@ -871,7 +941,6 @@ function renderMarkdown(markdown, highlight, apiBase = "") {
       continue;
     }
 
-    // ── Paragraph ────────────────────────────
     if (line.trim()) {
       nodes.push(<p key={i}>{mark(line, highlight)}</p>);
     }
@@ -882,9 +951,6 @@ function renderMarkdown(markdown, highlight, apiBase = "") {
   return nodes;
 }
 
-// ─────────────────────────────────────────────
-// Inline helpers
-// ─────────────────────────────────────────────
 function mark(text, phrase) {
   if (!phrase || !text.toLowerCase().includes(phrase.toLowerCase()))
     return inline(text);
@@ -899,22 +965,27 @@ function mark(text, phrase) {
 }
 
 function inline(text, keyPrefix = "") {
-  // Handle bold, inline code, and links
   return text
     .split(/(`[^`]+`|\*\*[^*]+\*\*|\[([^\]]+)\]\(([^)]+)\))/g)
     .map((part, index) => {
       if (!part) return null;
       if (part.startsWith("`") && part.endsWith("`"))
-        return <code key={`${keyPrefix}-${index}`}>{part.slice(1, -1)}</code>;
+        return (
+          <code key={`${keyPrefix}-${index}`}>{part.slice(1, -1)}</code>
+        );
       if (part.startsWith("**") && part.endsWith("**"))
         return (
           <strong key={`${keyPrefix}-${index}`}>{part.slice(2, -2)}</strong>
         );
-      // Links: [text](url)
       const linkMatch = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
       if (linkMatch)
         return (
-          <a key={`${keyPrefix}-${index}`} href={linkMatch[2]} target="_blank" rel="noreferrer">
+          <a
+            key={`${keyPrefix}-${index}`}
+            href={linkMatch[2]}
+            target="_blank"
+            rel="noreferrer"
+          >
             {linkMatch[1]}
           </a>
         );

@@ -5,11 +5,14 @@ from pathlib import Path
 
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse, PlainTextResponse
+from fastapi.responses import FileResponse, PlainTextResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
+from pydantic import BaseModel
 
 from .config import ASSETS_ROOT, COURSES_ROOT, ROOT
 from .pipeline import read_markdown
+from .chat import stream_chat, explain_selection
+from .rag import build_index
 
 from urllib.parse import unquote
 
@@ -42,6 +45,21 @@ _HTML_ROOTS: list[Path] = [ML_ROOT, SD_ROOT]
 # ── Static assets ─────────────────────────────────────────────────────────────
 if ASSETS_ROOT.exists():
     app.mount("/assets", StaticFiles(directory=str(ASSETS_ROOT)), name="assets")
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Models
+# ─────────────────────────────────────────────────────────────────────────────
+
+class ChatRequest(BaseModel):
+    question:      str
+    course_filter: str | None = None
+    history:       list[dict] | None = None   # [{role, content}, ...]
+
+class SelectionRequest(BaseModel):
+    selected_text:       str
+    surrounding_context: str = ""
+    course:              str = ""
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -111,6 +129,7 @@ def courses() -> dict:
 # ─────────────────────────────────────────────────────────────────────────────
 # Lesson content  (Markdown → {metadata, body})
 # ─────────────────────────────────────────────────────────────────────────────
+
 @app.get("/api/content/{content_path:path}")
 def content(content_path: str) -> dict:
     """
@@ -148,6 +167,7 @@ def content(content_path: str) -> dict:
         raise HTTPException(status_code=500, detail=f"Could not parse file: {exc}")
 
     return {"metadata": metadata, "body": body}
+
 
 # ─────────────────────────────────────────────────────────────────────────────
 # HTML lesson files  (Machine Learning, System Design, …)
@@ -282,6 +302,7 @@ def search(
 
     return {"results": results[:limit]}
 
+
 @app.get("/api/debug/tree")
 def debug_tree():
     courses = COURSES_ROOT
@@ -291,6 +312,67 @@ def debug_tree():
     for p in sorted(courses.rglob("*"))[:100]:  # limit output
         tree[str(p.relative_to(ROOT))] = p.is_file()
     return {"root": str(ROOT), "tree": tree}
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Chat  (RAG-grounded streaming)
+# ─────────────────────────────────────────────────────────────────────────────
+
+@app.post("/api/chat")
+async def chat(req: ChatRequest):
+    """
+    Stream an AI answer grounded in course material.
+    Response is text/event-stream with JSON chunks:
+      {"token": "..."}   — streamed text token
+      {"sources": [...]} — sent once at the end
+      {"error": "..."}   — on failure
+    """
+    return StreamingResponse(
+        stream_chat(req.question, req.course_filter, req.history),
+        media_type="text/event-stream",
+        headers={
+            "Cache-Control": "no-cache",
+            "X-Accel-Buffering": "no",   # prevent nginx buffering on Render
+        },
+    )
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Explain  (deep-dive on selected text)
+# ─────────────────────────────────────────────────────────────────────────────
+
+@app.post("/api/explain")
+async def explain(req: SelectionRequest):
+    """
+    Stream a deep-dive explanation of a selected text snippet.
+    Same SSE format as /api/chat.
+    """
+    return StreamingResponse(
+        explain_selection(req.selected_text, req.surrounding_context, req.course),
+        media_type="text/event-stream",
+        headers={
+            "Cache-Control": "no-cache",
+            "X-Accel-Buffering": "no",
+        },
+    )
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# RAG index management
+# ─────────────────────────────────────────────────────────────────────────────
+
+@app.post("/api/index/rebuild")
+async def rebuild_index():
+    """Rebuild the TF-IDF RAG index from all markdown files. Call after adding new content."""
+    count = build_index()
+    return {"ok": True, "chunks_indexed": count}
+
+
+@app.get("/api/index/status")
+async def index_status():
+    """Check how many chunks are currently indexed."""
+    from .rag import _chunks
+    return {"indexed_chunks": len(_chunks)}
 
 
 # ─────────────────────────────────────────────────────────────────────────────
