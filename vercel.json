@@ -2,11 +2,17 @@
   "version": 2,
   "buildCommand": "cd placement_prep/frontend && npm install && npm run build",
   "outputDirectory": "placement_prep/frontend/dist",
+
   "functions": {
     "api/index.py": {
-      "includeFiles": "courses/**,assets/**,placement_prep/data/**"
+      "includeFiles": [
+        "courses/**",
+        "assets/**",
+        "placement_prep/data/**"
+      ]
     }
   },
+
   "routes": [
     {
       "src": "^/api/(.*)",
