@@ -1,6 +1,6 @@
 {
   "version": 2,
   "framework": "vite",
-  "buildCommand": "cd placement_prep/frontend && npm install && npm run build",
-  "outputDirectory": "placement_prep/frontend/dist"
+  "buildCommand": "npm install && npm run build",
+  "outputDirectory": "dist"
 }
