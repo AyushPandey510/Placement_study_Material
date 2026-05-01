@@ -11,6 +11,8 @@ from fastapi.staticfiles import StaticFiles
 from .config import ASSETS_ROOT, COURSES_ROOT, ROOT
 from .pipeline import read_markdown
 
+from urllib.parse import unquote
+
 
 app = FastAPI(title="Placement Prep Platform")
 
@@ -109,20 +111,34 @@ def courses() -> dict:
 # ─────────────────────────────────────────────────────────────────────────────
 # Lesson content  (Markdown → {metadata, body})
 # ─────────────────────────────────────────────────────────────────────────────
-
 @app.get("/api/content/{content_path:path}")
 def content(content_path: str) -> dict:
     """
-    Serve a parsed markdown lesson.
-
-    FIX: uses _safe_resolve() instead of inline resolve() so path-traversal
-    attempts are rejected with 403 rather than silently succeeding.
+    Serve markdown content (Vercel-safe version).
     """
-    path = _safe_resolve(COURSES_ROOT, content_path)
 
-    if not path.exists() or not path.is_file():
+    # 🔥 decode URL encoding
+    content_path = unquote(content_path).strip()
+
+    try:
+        path = _safe_resolve(COURSES_ROOT, content_path)
+    except HTTPException:
+        path = None
+
+    # 🔥 fallback if safe_resolve fails or file not found
+    if not path or not path.exists():
+        target_name = Path(content_path).name
+
+        for p in COURSES_ROOT.rglob("*.md"):
+            if p.name == target_name:
+                path = p
+                break
+
+    # ❌ still not found
+    if not path or not path.exists() or not path.is_file():
         raise HTTPException(status_code=404, detail=f"Not found: {content_path}")
 
+    # 🔒 ensure it's markdown
     if path.suffix.lower() not in {".md", ".markdown"}:
         raise HTTPException(status_code=400, detail="Only markdown files are served here")
 
@@ -132,7 +148,6 @@ def content(content_path: str) -> dict:
         raise HTTPException(status_code=500, detail=f"Could not parse file: {exc}")
 
     return {"metadata": metadata, "body": body}
-
 
 # ─────────────────────────────────────────────────────────────────────────────
 # HTML lesson files  (Machine Learning, System Design, …)
