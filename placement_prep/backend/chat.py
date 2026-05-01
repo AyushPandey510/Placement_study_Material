@@ -17,7 +17,7 @@ from .rag import retrieve, ensure_index
 
 GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "")
 GROQ_URL     = "https://api.groq.com/openai/v1/chat/completions"
-MODEL        = "llama3-70b-8192"   # fast + free on Groq
+MODEL        = "llama-3.3-70b-versatile"   # updated: llama3-70b-8192 is deprecated on Groq
 
 SYSTEM_PROMPT = """You are a knowledgeable study assistant for a technical interview prep platform.
 Your job is to help students understand concepts from their course material.
@@ -99,6 +99,7 @@ async def stream_chat(
         async with client.stream("POST", GROQ_URL, json=payload, headers=headers) as resp:
             if resp.status_code != 200:
                 error_body = await resp.aread()
+                print("🔥 GROQ ERROR:", error_body.decode())
                 yield f"data: {{\"error\": \"Groq API error {resp.status_code}\"}}\n\n"
                 return
 
@@ -173,7 +174,12 @@ Please explain "{selected_text}" in depth."""
 
     async with httpx.AsyncClient(timeout=60) as client:
         async with client.stream("POST", GROQ_URL, json=payload, headers=headers) as resp:
+            # FIX: was indented inside the if-block, so the async for loop
+            # never ran — response was consumed by aread() and the stream
+            # was already closed before iteration began.
             if resp.status_code != 200:
+                error_body = await resp.aread()
+                print("🔥 GROQ ERROR:", error_body.decode())
                 yield f"data: {{\"error\": \"Groq API error {resp.status_code}\"}}\n\n"
                 return
 
